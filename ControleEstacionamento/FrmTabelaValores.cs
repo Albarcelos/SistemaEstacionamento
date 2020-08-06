@@ -125,5 +125,24 @@ namespace ControleEstacionamento
             dateVigenciaFinal.Value = DateTime.Now;
             timeVigenciaFinal.Value = DateTime.Now;
         }
+
+        private void dgvValorVigencia_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // se houve clique em alguma das celulas no datagridview
+            if (e.RowIndex >= 0)
+            {
+                // retorna a linha selacionada no grid
+                DataGridViewRow dgvLinhaSelected = dgvValorVigencia.Rows[e.RowIndex];
+
+                // pega o dado de acordo com o id da coluna desejada
+                txtValor.Text = dgvLinhaSelected.Cells["valorDGVColumn"].Value.ToString();
+
+                dateVigenciaInicial.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value;
+                timeVigenciaInicial.Value = Convert.ToDateTime(dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value);
+
+                dateVigenciaFinal.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value;
+                timeVigenciaFinal.Value = Convert.ToDateTime((DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value);
+            }
+        }
     }
 }

@@ -58,8 +58,8 @@ namespace ControleEstacionamento
         private void btnEntrada_Click(object sender, EventArgs e)
         {
             // Mostrar os itens de Entrada de Veiculo da tela.
-            lblPlacaVeiculo.Visible = true;
-            txtPlacaVeiculo.Visible = true;
+            //lblPlacaVeiculo.Visible = true;
+            //txtPlacaVeiculo.Visible = true;
             txtPlacaVeiculo.Text = "";
             btnConfirmarEntrada.Visible = true;
             btnCancelarEntrada.Visible = true;
@@ -68,8 +68,8 @@ namespace ControleEstacionamento
         private void btnCancelarEntrada_Click(object sender, EventArgs e)
         {
             // Esconder os itens de Entrada de Veiculo da tela.
-            lblPlacaVeiculo.Visible = false;
-            txtPlacaVeiculo.Visible = false;
+            //lblPlacaVeiculo.Visible = false;
+            //txtPlacaVeiculo.Visible = false;
             btnConfirmarEntrada.Visible = false;
             btnCancelarEntrada.Visible = false;
         }
@@ -105,7 +105,7 @@ namespace ControleEstacionamento
                 DataGridViewRow dgvLinhaSelected = dgvVeiculos.Rows[dgvVeiculos.CurrentRow.Index];
 
                 // pega o dado de acordo com o id da coluna desejada
-                MessageBox.Show("IdVeiculo = " + dgvLinhaSelected.Cells["idVeiculosColumn"].Value.ToString());
+                MessageBox.Show("IdVeiculo = " + dgvLinhaSelected.Cells["idVeiculosDGVColumn"].Value.ToString());
             }
 
             /*
@@ -158,7 +158,7 @@ namespace ControleEstacionamento
                 DataGridViewRow dgvLinhaSelected = dgvVeiculos.Rows[e.RowIndex];
 
                 // pega o dado de acordo com o id da coluna desejada
-                label1.Text = dgvLinhaSelected.Cells["idVeiculosColumn"].Value.ToString();
+                txtPlacaVeiculo.Text = dgvLinhaSelected.Cells["placaVeiculoDGVColumn"].Value.ToString();
             }
         }
     }

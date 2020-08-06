@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolstripTabelaValores = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvValorVigencia = new System.Windows.Forms.DataGridView();
+            this.valoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetValores = new ControleEstacionamento.estacionamentoDataSet1();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
@@ -52,19 +54,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.idvaloresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vigenciaInicialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vigenciaFinalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetValores = new ControleEstacionamento.estacionamentoDataSet1();
             this.valoresTableAdapter = new ControleEstacionamento.estacionamentoDataSet1TableAdapters.valoresTableAdapter();
+            this.idValoresDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vigenciaInicialDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vigenciaFinalDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValorVigencia)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetValores)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -94,16 +94,27 @@
             this.dgvValorVigencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvValorVigencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvValorVigencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idvaloresDataGridViewTextBoxColumn,
-            this.valorDataGridViewTextBoxColumn,
-            this.vigenciaInicialDataGridViewTextBoxColumn,
-            this.vigenciaFinalDataGridViewTextBoxColumn});
+            this.idValoresDGVColumn,
+            this.valorDGVColumn,
+            this.vigenciaInicialDGVColumn,
+            this.vigenciaFinalDGVColumn});
             this.dgvValorVigencia.DataSource = this.valoresBindingSource;
             this.dgvValorVigencia.Location = new System.Drawing.Point(12, 187);
             this.dgvValorVigencia.Name = "dgvValorVigencia";
             this.dgvValorVigencia.ReadOnly = true;
             this.dgvValorVigencia.Size = new System.Drawing.Size(414, 310);
             this.dgvValorVigencia.TabIndex = 1;
+            this.dgvValorVigencia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvValorVigencia_CellClick);
+            // 
+            // valoresBindingSource
+            // 
+            this.valoresBindingSource.DataMember = "valores";
+            this.valoresBindingSource.DataSource = this.DataSetValores;
+            // 
+            // DataSetValores
+            // 
+            this.DataSetValores.DataSetName = "DataSetValores";
+            this.DataSetValores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnAdicionar
             // 
@@ -296,57 +307,47 @@
             this.txtValor.TabIndex = 6;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // idvaloresDataGridViewTextBoxColumn
-            // 
-            this.idvaloresDataGridViewTextBoxColumn.DataPropertyName = "idvalores";
-            this.idvaloresDataGridViewTextBoxColumn.HeaderText = "idvalores";
-            this.idvaloresDataGridViewTextBoxColumn.Name = "idvaloresDataGridViewTextBoxColumn";
-            this.idvaloresDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idvaloresDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vigenciaInicialDataGridViewTextBoxColumn
-            // 
-            this.vigenciaInicialDataGridViewTextBoxColumn.DataPropertyName = "vigenciaInicial";
-            dataGridViewCellStyle5.Format = "G";
-            dataGridViewCellStyle5.NullValue = null;
-            this.vigenciaInicialDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.vigenciaInicialDataGridViewTextBoxColumn.HeaderText = "Vigência Inicial";
-            this.vigenciaInicialDataGridViewTextBoxColumn.Name = "vigenciaInicialDataGridViewTextBoxColumn";
-            this.vigenciaInicialDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vigenciaFinalDataGridViewTextBoxColumn
-            // 
-            this.vigenciaFinalDataGridViewTextBoxColumn.DataPropertyName = "vigenciaFinal";
-            dataGridViewCellStyle6.Format = "G";
-            dataGridViewCellStyle6.NullValue = null;
-            this.vigenciaFinalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.vigenciaFinalDataGridViewTextBoxColumn.HeaderText = "Vigência Final";
-            this.vigenciaFinalDataGridViewTextBoxColumn.Name = "vigenciaFinalDataGridViewTextBoxColumn";
-            this.vigenciaFinalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valoresBindingSource
-            // 
-            this.valoresBindingSource.DataMember = "valores";
-            this.valoresBindingSource.DataSource = this.DataSetValores;
-            // 
-            // DataSetValores
-            // 
-            this.DataSetValores.DataSetName = "DataSetValores";
-            this.DataSetValores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // valoresTableAdapter
             // 
             this.valoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // idValoresDGVColumn
+            // 
+            this.idValoresDGVColumn.DataPropertyName = "idvalores";
+            this.idValoresDGVColumn.HeaderText = "idvalores";
+            this.idValoresDGVColumn.Name = "idValoresDGVColumn";
+            this.idValoresDGVColumn.ReadOnly = true;
+            this.idValoresDGVColumn.Visible = false;
+            // 
+            // valorDGVColumn
+            // 
+            this.valorDGVColumn.DataPropertyName = "valor";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.valorDGVColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.valorDGVColumn.HeaderText = "Valor";
+            this.valorDGVColumn.Name = "valorDGVColumn";
+            this.valorDGVColumn.ReadOnly = true;
+            // 
+            // vigenciaInicialDGVColumn
+            // 
+            this.vigenciaInicialDGVColumn.DataPropertyName = "vigenciaInicial";
+            dataGridViewCellStyle2.Format = "G";
+            dataGridViewCellStyle2.NullValue = null;
+            this.vigenciaInicialDGVColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.vigenciaInicialDGVColumn.HeaderText = "Vigência Inicial";
+            this.vigenciaInicialDGVColumn.Name = "vigenciaInicialDGVColumn";
+            this.vigenciaInicialDGVColumn.ReadOnly = true;
+            // 
+            // vigenciaFinalDGVColumn
+            // 
+            this.vigenciaFinalDGVColumn.DataPropertyName = "vigenciaFinal";
+            dataGridViewCellStyle3.Format = "G";
+            dataGridViewCellStyle3.NullValue = null;
+            this.vigenciaFinalDGVColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.vigenciaFinalDGVColumn.HeaderText = "Vigência Final";
+            this.vigenciaFinalDGVColumn.Name = "vigenciaFinalDGVColumn";
+            this.vigenciaFinalDGVColumn.ReadOnly = true;
             // 
             // FrmTabelaValores
             // 
@@ -367,12 +368,12 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValorVigencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetValores)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.valoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetValores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,9 +404,9 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DateTimePicker timeVigenciaFinal;
         private System.Windows.Forms.DateTimePicker timeVigenciaInicial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idvaloresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vigenciaInicialDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vigenciaFinalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idValoresDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vigenciaInicialDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vigenciaFinalDGVColumn;
     }
 }

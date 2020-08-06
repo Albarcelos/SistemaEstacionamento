@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaDeValoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,27 +47,26 @@
             this.lblPlacaVeiculo = new System.Windows.Forms.Label();
             this.txtPlacaVeiculo = new System.Windows.Forms.TextBox();
             this.dgvVeiculos = new System.Windows.Forms.DataGridView();
+            this.veiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetVeiculos = new ControleEstacionamento.estacionamentoDataSet2();
             this.btnCancelarEntrada = new System.Windows.Forms.Button();
             this.btnConfirmarEntrada = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.timerDatHoraAtual = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.idveiculosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.entradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadiaCobradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetVeiculos = new ControleEstacionamento.estacionamentoDataSet2();
             this.veiculosTableAdapter = new ControleEstacionamento.estacionamentoDataSet2TableAdapters.veiculosTableAdapter();
+            this.idVeiculosDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placaVeiculoDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataEntradaDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataSaidaDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempoEstadiaDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadiaCobradaDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu.SuspendLayout();
             this.status.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.veiculosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetVeiculos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -170,7 +174,6 @@
             this.lblPlacaVeiculo.Size = new System.Drawing.Size(93, 13);
             this.lblPlacaVeiculo.TabIndex = 9;
             this.lblPlacaVeiculo.Text = "Placa Veiculo :";
-            this.lblPlacaVeiculo.Visible = false;
             // 
             // txtPlacaVeiculo
             // 
@@ -179,7 +182,6 @@
             this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
             this.txtPlacaVeiculo.Size = new System.Drawing.Size(74, 20);
             this.txtPlacaVeiculo.TabIndex = 10;
-            this.txtPlacaVeiculo.Visible = false;
             this.txtPlacaVeiculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlacaVeiculo_KeyPress);
             // 
             // dgvVeiculos
@@ -193,13 +195,13 @@
             this.dgvVeiculos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVeiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idveiculosDataGridViewTextBoxColumn,
-            this.placaDataGridViewTextBoxColumn,
-            this.entradaDataGridViewTextBoxColumn,
-            this.saidaDataGridViewTextBoxColumn,
-            this.estadiaDataGridViewTextBoxColumn,
-            this.estadiaCobradaDataGridViewTextBoxColumn,
-            this.valorDataGridViewTextBoxColumn});
+            this.idVeiculosDGVColumn,
+            this.placaVeiculoDGVColumn,
+            this.dataEntradaDGVColumn,
+            this.dataSaidaDGVColumn,
+            this.tempoEstadiaDGVColumn,
+            this.estadiaCobradaDGVColumn,
+            this.valorDGVColumn});
             this.dgvVeiculos.DataSource = this.veiculosBindingSource;
             this.dgvVeiculos.Location = new System.Drawing.Point(12, 130);
             this.dgvVeiculos.Name = "dgvVeiculos";
@@ -208,6 +210,16 @@
             this.dgvVeiculos.Size = new System.Drawing.Size(776, 295);
             this.dgvVeiculos.TabIndex = 12;
             this.dgvVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVeiculos_CellClick);
+            // 
+            // veiculosBindingSource
+            // 
+            this.veiculosBindingSource.DataMember = "veiculos";
+            this.veiculosBindingSource.DataSource = this.DataSetVeiculos;
+            // 
+            // DataSetVeiculos
+            // 
+            this.DataSetVeiculos.DataSetName = "DataSetVeiculos";
+            this.DataSetVeiculos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnCancelarEntrada
             // 
@@ -244,84 +256,80 @@
             // 
             this.timerDatHoraAtual.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(371, 109);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
-            // 
-            // idveiculosDataGridViewTextBoxColumn
-            // 
-            this.idveiculosDataGridViewTextBoxColumn.DataPropertyName = "idveiculos";
-            this.idveiculosDataGridViewTextBoxColumn.HeaderText = "idveiculos";
-            this.idveiculosDataGridViewTextBoxColumn.Name = "idveiculosDataGridViewTextBoxColumn";
-            this.idveiculosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // placaDataGridViewTextBoxColumn
-            // 
-            this.placaDataGridViewTextBoxColumn.DataPropertyName = "placa";
-            this.placaDataGridViewTextBoxColumn.HeaderText = "placa";
-            this.placaDataGridViewTextBoxColumn.Name = "placaDataGridViewTextBoxColumn";
-            this.placaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // entradaDataGridViewTextBoxColumn
-            // 
-            this.entradaDataGridViewTextBoxColumn.DataPropertyName = "entrada";
-            this.entradaDataGridViewTextBoxColumn.HeaderText = "entrada";
-            this.entradaDataGridViewTextBoxColumn.Name = "entradaDataGridViewTextBoxColumn";
-            this.entradaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // saidaDataGridViewTextBoxColumn
-            // 
-            this.saidaDataGridViewTextBoxColumn.DataPropertyName = "saida";
-            this.saidaDataGridViewTextBoxColumn.HeaderText = "saida";
-            this.saidaDataGridViewTextBoxColumn.Name = "saidaDataGridViewTextBoxColumn";
-            this.saidaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadiaDataGridViewTextBoxColumn
-            // 
-            this.estadiaDataGridViewTextBoxColumn.DataPropertyName = "estadia";
-            this.estadiaDataGridViewTextBoxColumn.HeaderText = "estadia";
-            this.estadiaDataGridViewTextBoxColumn.Name = "estadiaDataGridViewTextBoxColumn";
-            this.estadiaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadiaCobradaDataGridViewTextBoxColumn
-            // 
-            this.estadiaCobradaDataGridViewTextBoxColumn.DataPropertyName = "estadiaCobrada";
-            this.estadiaCobradaDataGridViewTextBoxColumn.HeaderText = "estadiaCobrada";
-            this.estadiaCobradaDataGridViewTextBoxColumn.Name = "estadiaCobradaDataGridViewTextBoxColumn";
-            this.estadiaCobradaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
-            this.valorDataGridViewTextBoxColumn.HeaderText = "valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // veiculosBindingSource
-            // 
-            this.veiculosBindingSource.DataMember = "veiculos";
-            this.veiculosBindingSource.DataSource = this.DataSetVeiculos;
-            // 
-            // DataSetVeiculos
-            // 
-            this.DataSetVeiculos.DataSetName = "DataSetVeiculos";
-            this.DataSetVeiculos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // veiculosTableAdapter
             // 
             this.veiculosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idVeiculosDGVColumn
+            // 
+            this.idVeiculosDGVColumn.DataPropertyName = "idveiculos";
+            this.idVeiculosDGVColumn.HeaderText = "idveiculos";
+            this.idVeiculosDGVColumn.Name = "idVeiculosDGVColumn";
+            this.idVeiculosDGVColumn.ReadOnly = true;
+            this.idVeiculosDGVColumn.Visible = false;
+            // 
+            // placaVeiculoDGVColumn
+            // 
+            this.placaVeiculoDGVColumn.DataPropertyName = "placa";
+            this.placaVeiculoDGVColumn.HeaderText = "Placa Veículo";
+            this.placaVeiculoDGVColumn.Name = "placaVeiculoDGVColumn";
+            this.placaVeiculoDGVColumn.ReadOnly = true;
+            // 
+            // dataEntradaDGVColumn
+            // 
+            this.dataEntradaDGVColumn.DataPropertyName = "entrada";
+            dataGridViewCellStyle1.Format = "G";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataEntradaDGVColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataEntradaDGVColumn.HeaderText = "Data Entrada";
+            this.dataEntradaDGVColumn.Name = "dataEntradaDGVColumn";
+            this.dataEntradaDGVColumn.ReadOnly = true;
+            // 
+            // dataSaidaDGVColumn
+            // 
+            this.dataSaidaDGVColumn.DataPropertyName = "saida";
+            dataGridViewCellStyle2.Format = "G";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataSaidaDGVColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataSaidaDGVColumn.HeaderText = "Data Saída";
+            this.dataSaidaDGVColumn.Name = "dataSaidaDGVColumn";
+            this.dataSaidaDGVColumn.ReadOnly = true;
+            // 
+            // tempoEstadiaDGVColumn
+            // 
+            this.tempoEstadiaDGVColumn.DataPropertyName = "estadia";
+            dataGridViewCellStyle3.Format = "t";
+            dataGridViewCellStyle3.NullValue = null;
+            this.tempoEstadiaDGVColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tempoEstadiaDGVColumn.HeaderText = "Tempo Estadia";
+            this.tempoEstadiaDGVColumn.Name = "tempoEstadiaDGVColumn";
+            this.tempoEstadiaDGVColumn.ReadOnly = true;
+            // 
+            // estadiaCobradaDGVColumn
+            // 
+            this.estadiaCobradaDGVColumn.DataPropertyName = "estadiaCobrada";
+            dataGridViewCellStyle4.Format = "t";
+            dataGridViewCellStyle4.NullValue = null;
+            this.estadiaCobradaDGVColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.estadiaCobradaDGVColumn.HeaderText = "Estadia Cobrada";
+            this.estadiaCobradaDGVColumn.Name = "estadiaCobradaDGVColumn";
+            this.estadiaCobradaDGVColumn.ReadOnly = true;
+            // 
+            // valorDGVColumn
+            // 
+            this.valorDGVColumn.DataPropertyName = "valor";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.valorDGVColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.valorDGVColumn.HeaderText = "Valor";
+            this.valorDGVColumn.Name = "valorDGVColumn";
+            this.valorDGVColumn.ReadOnly = true;
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvVeiculos);
             this.Controls.Add(this.btnCancelarEntrada);
             this.Controls.Add(this.btnConfirmarEntrada);
@@ -343,9 +351,9 @@
             this.status.ResumeLayout(false);
             this.status.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.veiculosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetVeiculos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,7 +377,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolstripTextoStatus;
         private System.Windows.Forms.DataGridView dgvVeiculos;
         private System.Windows.Forms.Timer timerDatHoraAtual;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVeiculosColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn placaVeiculoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEntradaColumn;
@@ -380,13 +387,13 @@
         private estacionamentoDataSet2 DataSetVeiculos;
         private System.Windows.Forms.BindingSource veiculosBindingSource;
         private estacionamentoDataSet2TableAdapters.veiculosTableAdapter veiculosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idveiculosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn entradaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saidaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadiaCobradaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVeiculosDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn placaVeiculoDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataEntradaDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataSaidaDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tempoEstadiaDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadiaCobradaDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDGVColumn;
     }
 }
 
