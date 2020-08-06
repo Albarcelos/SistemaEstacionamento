@@ -25,8 +25,6 @@ namespace ControleEstacionamento
         {
             // TODO: esta linha de código carrega dados na tabela 'estacionamentoDataSet2.veiculos'. Você pode movê-la ou removê-la conforme necessário.
             this.veiculosTableAdapter.Fill(this.DataSetVeiculos.veiculos);
-            // TODO: esta linha de código carrega dados na tabela 'estacionamentoDataSet.veiculos'. Você pode movê-la ou removê-la conforme necessário.
-            //this.veiculosTableAdapter.Fill(this.estacionamentoDataSet.veiculos);
 
             // Carregamento do sistema.
             string strConn = @"server=localhost;user id=root;password=al3xandr3;database=estacionamento;SslMode=none";
@@ -53,13 +51,22 @@ namespace ControleEstacionamento
             {
                 MessageBox.Show("Não foi possível se conectar ao banco MySql!", "Erro de Conexão");
             }
+
+
+            // Dicas para os botões
+            toolTip.SetToolTip(btnAtualizarLista, "Atualizar a lista de valores/vigências.");
+            toolTip.SetToolTip(btnEntrada, "Entrada de veículo do sistema.");
+            toolTip.SetToolTip(btnSaida, "Saída de veículo do sistema.");
+            toolTip.SetToolTip(btnConfirmarEntrada, "Confirmar o processo de entrada do veículo.");
+            toolTip.SetToolTip(btnCancelarEntrada, "Cancelar o precesso de entrada de veículo.");
+
+            toolTip.SetToolTip(txtPlacaVeiculo, "Informe a placa do veículo para entrada.");
         }
 
         private void btnEntrada_Click(object sender, EventArgs e)
         {
             // Mostrar os itens de Entrada de Veiculo da tela.
-            //lblPlacaVeiculo.Visible = true;
-            //txtPlacaVeiculo.Visible = true;
+            txtPlacaVeiculo.Enabled = true;
             txtPlacaVeiculo.Text = "";
             btnConfirmarEntrada.Visible = true;
             btnCancelarEntrada.Visible = true;
@@ -68,8 +75,7 @@ namespace ControleEstacionamento
         private void btnCancelarEntrada_Click(object sender, EventArgs e)
         {
             // Esconder os itens de Entrada de Veiculo da tela.
-            //lblPlacaVeiculo.Visible = false;
-            //txtPlacaVeiculo.Visible = false;
+            txtPlacaVeiculo.Enabled = false;
             btnConfirmarEntrada.Visible = false;
             btnCancelarEntrada.Visible = false;
         }
@@ -103,9 +109,15 @@ namespace ControleEstacionamento
             {
                 // retorna a linha selacionada no grid
                 DataGridViewRow dgvLinhaSelected = dgvVeiculos.Rows[dgvVeiculos.CurrentRow.Index];
+                int idVeiculoSelected = new int();
+                idVeiculoSelected = (int)dgvLinhaSelected.Cells["idVeiculosDGVColumn"].Value;
 
                 // pega o dado de acordo com o id da coluna desejada
-                MessageBox.Show("IdVeiculo = " + dgvLinhaSelected.Cells["idVeiculosDGVColumn"].Value.ToString());
+                MessageBox.Show("Gostaria de confirmar a saída do veículo de placa = " + dgvLinhaSelected.Cells["placaVeiculoDGVColumn"].Value.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Selecione o veículo que deseja efetuar a sáida.", "Atenção!");
             }
 
             /*
@@ -160,6 +172,12 @@ namespace ControleEstacionamento
                 // pega o dado de acordo com o id da coluna desejada
                 txtPlacaVeiculo.Text = dgvLinhaSelected.Cells["placaVeiculoDGVColumn"].Value.ToString();
             }
+        }
+
+        private void btnAtualizarLista_Click(object sender, EventArgs e)
+        {
+            // Atualizar o grid com os dados da tabela
+            this.veiculosTableAdapter.Fill(this.DataSetVeiculos.veiculos);
         }
     }
 }

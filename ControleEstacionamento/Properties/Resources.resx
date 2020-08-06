@@ -121,10 +121,19 @@
   <data name="estacionamento_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\estacionamento_logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cross-icone-5804-161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross-icone-5804-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tick-icone-7522-161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tick-icone-7522-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cross-icone-5804-161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross-icone-5804-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="refresh-table-icone-6973-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-table-icone-6973-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open-icone-5603-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open-icone-5603-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit-a-blank-page-icone-6944-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-a-blank-page-icone-6944-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

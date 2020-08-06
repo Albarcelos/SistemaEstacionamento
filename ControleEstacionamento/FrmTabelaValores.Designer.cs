@@ -46,8 +46,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.timeVigenciaFinal = new System.Windows.Forms.DateTimePicker();
             this.timeVigenciaInicial = new System.Windows.Forms.DateTimePicker();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.dateVigenciaFinal = new System.Windows.Forms.DateTimePicker();
             this.dateVigenciaInicial = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +57,10 @@
             this.valorDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vigenciaInicialDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vigenciaFinalDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAtualizarLista = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValorVigencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.valoresBindingSource)).BeginInit();
@@ -71,9 +73,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolstripTabelaValores});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 500);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(438, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(484, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -102,7 +104,7 @@
             this.dgvValorVigencia.Location = new System.Drawing.Point(12, 187);
             this.dgvValorVigencia.Name = "dgvValorVigencia";
             this.dgvValorVigencia.ReadOnly = true;
-            this.dgvValorVigencia.Size = new System.Drawing.Size(414, 310);
+            this.dgvValorVigencia.Size = new System.Drawing.Size(460, 349);
             this.dgvValorVigencia.TabIndex = 1;
             this.dgvValorVigencia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvValorVigencia_CellClick);
             // 
@@ -136,7 +138,7 @@
             this.btnAlterar.ForeColor = System.Drawing.Color.MediumBlue;
             this.btnAlterar.Location = new System.Drawing.Point(167, 40);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(100, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(146, 23);
             this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -147,7 +149,7 @@
             this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemover.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnRemover.Location = new System.Drawing.Point(326, 40);
+            this.btnRemover.Location = new System.Drawing.Point(372, 40);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(100, 23);
             this.btnRemover.TabIndex = 2;
@@ -161,7 +163,7 @@
             this.arquivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(438, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,6 +184,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnAtualizarLista);
             this.panel1.Controls.Add(this.timeVigenciaFinal);
             this.panel1.Controls.Add(this.timeVigenciaInicial);
             this.panel1.Controls.Add(this.btnCancelar);
@@ -194,7 +199,7 @@
             this.panel1.Controls.Add(this.txtValor);
             this.panel1.Location = new System.Drawing.Point(12, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(414, 112);
+            this.panel1.Size = new System.Drawing.Size(460, 112);
             this.panel1.TabIndex = 6;
             // 
             // timeVigenciaFinal
@@ -216,39 +221,6 @@
             this.timeVigenciaInicial.ShowUpDown = true;
             this.timeVigenciaInicial.Size = new System.Drawing.Size(84, 20);
             this.timeVigenciaInicial.TabIndex = 12;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnCancelar.Image = global::ControleEstacionamento.Properties.Resources.cross_icone_5804_161;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(189, 81);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(84, 23);
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Enabled = false;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.Green;
-            this.btnConfirmar.Image = global::ControleEstacionamento.Properties.Resources.tick_icone_7522_161;
-            this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(97, 81);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnConfirmar.Size = new System.Drawing.Size(86, 23);
-            this.btnConfirmar.TabIndex = 11;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // dateVigenciaFinal
             // 
@@ -349,11 +321,54 @@
             this.vigenciaFinalDGVColumn.Name = "vigenciaFinalDGVColumn";
             this.vigenciaFinalDGVColumn.ReadOnly = true;
             // 
+            // btnAtualizarLista
+            // 
+            this.btnAtualizarLista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtualizarLista.Image = global::ControleEstacionamento.Properties.Resources.refresh_table_icone_6973_16;
+            this.btnAtualizarLista.Location = new System.Drawing.Point(429, 81);
+            this.btnAtualizarLista.Name = "btnAtualizarLista";
+            this.btnAtualizarLista.Size = new System.Drawing.Size(28, 23);
+            this.btnAtualizarLista.TabIndex = 14;
+            this.btnAtualizarLista.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnCancelar.Image = global::ControleEstacionamento.Properties.Resources.cross_icone_5804_161;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(189, 81);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 23);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Enabled = false;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.ForeColor = System.Drawing.Color.Green;
+            this.btnConfirmar.Image = global::ControleEstacionamento.Properties.Resources.tick_icone_7522_161;
+            this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirmar.Location = new System.Drawing.Point(97, 81);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnConfirmar.Size = new System.Drawing.Size(86, 23);
+            this.btnConfirmar.TabIndex = 11;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
             // FrmTabelaValores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 522);
+            this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAlterar);
@@ -363,6 +378,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmTabelaValores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTabelaValores";
             this.Load += new System.EventHandler(this.FrmTabelaValores_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -408,5 +424,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDGVColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vigenciaInicialDGVColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vigenciaFinalDGVColumn;
+        private System.Windows.Forms.Button btnAtualizarLista;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

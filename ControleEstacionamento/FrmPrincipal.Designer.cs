@@ -36,8 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabelaDeValoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.status = new System.Windows.Forms.StatusStrip();
             this.toolstripTextoStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -49,9 +47,6 @@
             this.dgvVeiculos = new System.Windows.Forms.DataGridView();
             this.veiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetVeiculos = new ControleEstacionamento.estacionamentoDataSet2();
-            this.btnCancelarEntrada = new System.Windows.Forms.Button();
-            this.btnConfirmarEntrada = new System.Windows.Forms.Button();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.timerDatHoraAtual = new System.Windows.Forms.Timer(this.components);
             this.veiculosTableAdapter = new ControleEstacionamento.estacionamentoDataSet2TableAdapters.veiculosTableAdapter();
             this.idVeiculosDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +56,13 @@
             this.tempoEstadiaDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadiaCobradaDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAtualizarLista = new System.Windows.Forms.Button();
+            this.btnCancelarEntrada = new System.Windows.Forms.Button();
+            this.btnConfirmarEntrada = new System.Windows.Forms.Button();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.tabelaDeValoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menu.SuspendLayout();
             this.status.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculos)).BeginInit();
@@ -75,7 +77,7 @@
             this.arquivoToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(800, 24);
+            this.menu.Size = new System.Drawing.Size(884, 24);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -88,27 +90,13 @@
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
-            // tabelaDeValoresToolStripMenuItem
-            // 
-            this.tabelaDeValoresToolStripMenuItem.Name = "tabelaDeValoresToolStripMenuItem";
-            this.tabelaDeValoresToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.tabelaDeValoresToolStripMenuItem.Text = "Tabela de Valores";
-            this.tabelaDeValoresToolStripMenuItem.Click += new System.EventHandler(this.tabelaDeValoresToolStripMenuItem_Click_1);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
             // status
             // 
             this.status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolstripTextoStatus});
-            this.status.Location = new System.Drawing.Point(0, 428);
+            this.status.Location = new System.Drawing.Point(0, 539);
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(800, 22);
+            this.status.Size = new System.Drawing.Size(884, 22);
             this.status.TabIndex = 2;
             this.status.Text = "statusStrip1";
             // 
@@ -133,7 +121,7 @@
             this.btnEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrada.ForeColor = System.Drawing.Color.Green;
-            this.btnEntrada.Location = new System.Drawing.Point(552, 101);
+            this.btnEntrada.Location = new System.Drawing.Point(636, 117);
             this.btnEntrada.Name = "btnEntrada";
             this.btnEntrada.Size = new System.Drawing.Size(115, 23);
             this.btnEntrada.TabIndex = 6;
@@ -146,7 +134,7 @@
             this.btnSaida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaida.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSaida.Location = new System.Drawing.Point(673, 101);
+            this.btnSaida.Location = new System.Drawing.Point(757, 117);
             this.btnSaida.Name = "btnSaida";
             this.btnSaida.Size = new System.Drawing.Size(115, 23);
             this.btnSaida.TabIndex = 7;
@@ -158,7 +146,7 @@
             // 
             this.lblDataHoraAtual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDataHoraAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataHoraAtual.Location = new System.Drawing.Point(508, 36);
+            this.lblDataHoraAtual.Location = new System.Drawing.Point(592, 36);
             this.lblDataHoraAtual.Name = "lblDataHoraAtual";
             this.lblDataHoraAtual.Size = new System.Drawing.Size(280, 13);
             this.lblDataHoraAtual.TabIndex = 8;
@@ -167,9 +155,10 @@
             // 
             // lblPlacaVeiculo
             // 
+            this.lblPlacaVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPlacaVeiculo.AutoSize = true;
             this.lblPlacaVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlacaVeiculo.Location = new System.Drawing.Point(549, 74);
+            this.lblPlacaVeiculo.Location = new System.Drawing.Point(633, 90);
             this.lblPlacaVeiculo.Name = "lblPlacaVeiculo";
             this.lblPlacaVeiculo.Size = new System.Drawing.Size(93, 13);
             this.lblPlacaVeiculo.TabIndex = 9;
@@ -177,7 +166,10 @@
             // 
             // txtPlacaVeiculo
             // 
-            this.txtPlacaVeiculo.Location = new System.Drawing.Point(648, 71);
+            this.txtPlacaVeiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPlacaVeiculo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPlacaVeiculo.Enabled = false;
+            this.txtPlacaVeiculo.Location = new System.Drawing.Point(732, 87);
             this.txtPlacaVeiculo.MaxLength = 7;
             this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
             this.txtPlacaVeiculo.Size = new System.Drawing.Size(74, 20);
@@ -203,11 +195,11 @@
             this.estadiaCobradaDGVColumn,
             this.valorDGVColumn});
             this.dgvVeiculos.DataSource = this.veiculosBindingSource;
-            this.dgvVeiculos.Location = new System.Drawing.Point(12, 130);
+            this.dgvVeiculos.Location = new System.Drawing.Point(12, 146);
             this.dgvVeiculos.Name = "dgvVeiculos";
             this.dgvVeiculos.ReadOnly = true;
             this.dgvVeiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVeiculos.Size = new System.Drawing.Size(776, 295);
+            this.dgvVeiculos.Size = new System.Drawing.Size(860, 390);
             this.dgvVeiculos.TabIndex = 12;
             this.dgvVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVeiculos_CellClick);
             // 
@@ -220,37 +212,6 @@
             // 
             this.DataSetVeiculos.DataSetName = "DataSetVeiculos";
             this.DataSetVeiculos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnCancelarEntrada
-            // 
-            this.btnCancelarEntrada.Image = global::ControleEstacionamento.Properties.Resources.cross_icone_5804_161;
-            this.btnCancelarEntrada.Location = new System.Drawing.Point(728, 69);
-            this.btnCancelarEntrada.Name = "btnCancelarEntrada";
-            this.btnCancelarEntrada.Size = new System.Drawing.Size(28, 23);
-            this.btnCancelarEntrada.TabIndex = 11;
-            this.btnCancelarEntrada.UseVisualStyleBackColor = true;
-            this.btnCancelarEntrada.Visible = false;
-            this.btnCancelarEntrada.Click += new System.EventHandler(this.btnCancelarEntrada_Click);
-            // 
-            // btnConfirmarEntrada
-            // 
-            this.btnConfirmarEntrada.Image = global::ControleEstacionamento.Properties.Resources.tick_icone_7522_161;
-            this.btnConfirmarEntrada.Location = new System.Drawing.Point(760, 69);
-            this.btnConfirmarEntrada.Name = "btnConfirmarEntrada";
-            this.btnConfirmarEntrada.Size = new System.Drawing.Size(28, 23);
-            this.btnConfirmarEntrada.TabIndex = 11;
-            this.btnConfirmarEntrada.UseVisualStyleBackColor = true;
-            this.btnConfirmarEntrada.Visible = false;
-            // 
-            // imgLogo
-            // 
-            this.imgLogo.Image = global::ControleEstacionamento.Properties.Resources.estacionamento_logo;
-            this.imgLogo.Location = new System.Drawing.Point(12, 36);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(75, 75);
-            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgLogo.TabIndex = 3;
-            this.imgLogo.TabStop = false;
             // 
             // timerDatHoraAtual
             // 
@@ -325,11 +286,71 @@
             this.valorDGVColumn.Name = "valorDGVColumn";
             this.valorDGVColumn.ReadOnly = true;
             // 
+            // btnAtualizarLista
+            // 
+            this.btnAtualizarLista.Image = global::ControleEstacionamento.Properties.Resources.refresh_table_icone_6973_16;
+            this.btnAtualizarLista.Location = new System.Drawing.Point(12, 117);
+            this.btnAtualizarLista.Name = "btnAtualizarLista";
+            this.btnAtualizarLista.Size = new System.Drawing.Size(28, 23);
+            this.btnAtualizarLista.TabIndex = 13;
+            this.btnAtualizarLista.UseVisualStyleBackColor = true;
+            this.btnAtualizarLista.Click += new System.EventHandler(this.btnAtualizarLista_Click);
+            // 
+            // btnCancelarEntrada
+            // 
+            this.btnCancelarEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarEntrada.Image = global::ControleEstacionamento.Properties.Resources.cross_icone_5804_161;
+            this.btnCancelarEntrada.Location = new System.Drawing.Point(812, 85);
+            this.btnCancelarEntrada.Name = "btnCancelarEntrada";
+            this.btnCancelarEntrada.Size = new System.Drawing.Size(28, 23);
+            this.btnCancelarEntrada.TabIndex = 11;
+            this.btnCancelarEntrada.UseVisualStyleBackColor = true;
+            this.btnCancelarEntrada.Visible = false;
+            this.btnCancelarEntrada.Click += new System.EventHandler(this.btnCancelarEntrada_Click);
+            // 
+            // btnConfirmarEntrada
+            // 
+            this.btnConfirmarEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirmarEntrada.Image = global::ControleEstacionamento.Properties.Resources.tick_icone_7522_161;
+            this.btnConfirmarEntrada.Location = new System.Drawing.Point(844, 85);
+            this.btnConfirmarEntrada.Name = "btnConfirmarEntrada";
+            this.btnConfirmarEntrada.Size = new System.Drawing.Size(28, 23);
+            this.btnConfirmarEntrada.TabIndex = 11;
+            this.btnConfirmarEntrada.UseVisualStyleBackColor = true;
+            this.btnConfirmarEntrada.Visible = false;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.Image = global::ControleEstacionamento.Properties.Resources.estacionamento_logo;
+            this.imgLogo.Location = new System.Drawing.Point(12, 36);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(75, 75);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgLogo.TabIndex = 3;
+            this.imgLogo.TabStop = false;
+            // 
+            // tabelaDeValoresToolStripMenuItem
+            // 
+            this.tabelaDeValoresToolStripMenuItem.Image = global::ControleEstacionamento.Properties.Resources.edit_a_blank_page_icone_6944_16;
+            this.tabelaDeValoresToolStripMenuItem.Name = "tabelaDeValoresToolStripMenuItem";
+            this.tabelaDeValoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tabelaDeValoresToolStripMenuItem.Text = "Tabela de Valores";
+            this.tabelaDeValoresToolStripMenuItem.Click += new System.EventHandler(this.tabelaDeValoresToolStripMenuItem_Click_1);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Image = global::ControleEstacionamento.Properties.Resources.open_icone_5603_16;
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.btnAtualizarLista);
             this.Controls.Add(this.dgvVeiculos);
             this.Controls.Add(this.btnCancelarEntrada);
             this.Controls.Add(this.btnConfirmarEntrada);
@@ -344,6 +365,7 @@
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estacionamento";
             this.Load += new System.EventHandler(this.frmInicial_Load);
             this.menu.ResumeLayout(false);
@@ -394,6 +416,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tempoEstadiaDGVColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadiaCobradaDGVColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDGVColumn;
+        private System.Windows.Forms.Button btnAtualizarLista;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

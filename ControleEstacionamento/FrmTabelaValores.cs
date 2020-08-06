@@ -26,11 +26,21 @@ namespace ControleEstacionamento
              * To get the DateTime from both these controls use the following code
              * DateTime myDate = datePortionDateTimePicker.Value.Date + timePortionDateTimePicker.Value.TimeOfDay;
              * 
-             * To assign the DateTime to both these controls use the following code
-             * datePortionDateTimePicker.Value  = myDate.Date;
-             * timePortionDateTimePicker.Value  = myDate.TimeOfDay;
-             * 
              */
+
+            // Dicas para os botões
+            toolTip.SetToolTip(btnAtualizarLista, "Atualizar a lista de valores/vigências.");
+            toolTip.SetToolTip(btnAdicionar, "Adicionar novo item de valores/vigências.");
+            toolTip.SetToolTip(btnAlterar, "Alterar o item de valores/vigências selecionado.");
+            toolTip.SetToolTip(btnRemover, "Remover o item de valores/vigências selecionado.");
+            toolTip.SetToolTip(btnConfirmar, "Confirmar a adição ou alteração item de valores/vigências.");
+            toolTip.SetToolTip(btnCancelar, "Cancelar a adição ou alteração item de valores/vigências.");
+
+            toolTip.SetToolTip(txtValor, "Informe o valor que será cobrado por hora.");
+            toolTip.SetToolTip(dateVigenciaInicial, "Informe a data de início da vigência do valor de cobrança.");
+            toolTip.SetToolTip(timeVigenciaInicial, "Informe o horário da data de início da vigência do valor de cobrança.");
+            toolTip.SetToolTip(dateVigenciaFinal, "Informe a data de término da vigência do valor de cobrança.");
+            toolTip.SetToolTip(timeVigenciaFinal, "Informe o horário da data de término da vigência do valor de cobrança.");
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -54,25 +64,62 @@ namespace ControleEstacionamento
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             // Alterar Valor e Vigência.
-            txtValor.Enabled = true;
-            dateVigenciaInicial.Enabled = true;
-            timeVigenciaInicial.Enabled = true;
-            dateVigenciaFinal.Enabled = true;
-            timeVigenciaFinal.Enabled = true;
-            btnConfirmar.Enabled = true;
-            btnCancelar.Enabled = true;
+
+            // se houve clique em alguma das celulas no datagridview
+            if (dgvValorVigencia.CurrentRow.Index >= 0)
+            {
+                // Habilitar campos
+                txtValor.Enabled = true;
+                dateVigenciaInicial.Enabled = true;
+                timeVigenciaInicial.Enabled = true;
+                dateVigenciaFinal.Enabled = true;
+                timeVigenciaFinal.Enabled = true;
+                btnConfirmar.Enabled = true;
+                btnCancelar.Enabled = true;
+
+                // retorna a linha selacionada no grid
+                DataGridViewRow dgvLinhaSelected = dgvValorVigencia.Rows[dgvValorVigencia.CurrentRow.Index];
+
+                // pega o dado de acordo com o id da coluna desejada
+                txtValor.Text = dgvLinhaSelected.Cells["valorDGVColumn"].Value.ToString();
+                dateVigenciaInicial.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value;
+                timeVigenciaInicial.Value = Convert.ToDateTime(dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value);
+                dateVigenciaFinal.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value;
+                timeVigenciaFinal.Value = Convert.ToDateTime((DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value);
+            }
+            else
+            {
+                MessageBox.Show("Selecione o registro que deseja alterar.", "Atenção!");
+            }
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
             // Remover Valor e Vigência.
-            txtValor.Enabled = false;
-            dateVigenciaInicial.Enabled = false;
-            timeVigenciaInicial.Enabled = false;
-            dateVigenciaFinal.Enabled = false;
-            timeVigenciaFinal.Enabled = false;
-            btnConfirmar.Enabled = false;
-            btnCancelar.Enabled = false;
+            // se houve clique em alguma das celulas no datagridview
+            if (dgvValorVigencia.CurrentRow.Index >= 0)
+            {
+                // Desabilitar campos
+                txtValor.Enabled = false;
+                dateVigenciaInicial.Enabled = false;
+                timeVigenciaInicial.Enabled = false;
+                dateVigenciaFinal.Enabled = false;
+                timeVigenciaFinal.Enabled = false;
+                btnConfirmar.Enabled = false;
+                btnCancelar.Enabled = false;
+
+                // retorna a linha selacionada no grid
+                DataGridViewRow dgvLinhaSelected = dgvValorVigencia.Rows[dgvValorVigencia.CurrentRow.Index];
+
+                // pega o dado de acordo com o id da coluna desejada
+                txtValor.Text = dgvLinhaSelected.Cells["valorDGVColumn"].Value.ToString();
+
+                MessageBox.Show("registro que deseja remover = " + dgvLinhaSelected.Cells["idValoresDGVColumn"].Value.ToString(), "Atenção!");
+            }
+            else
+            {
+                MessageBox.Show("Selecione o registro que deseja remover.", "Atenção!");
+            }
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,13 +183,17 @@ namespace ControleEstacionamento
 
                 // pega o dado de acordo com o id da coluna desejada
                 txtValor.Text = dgvLinhaSelected.Cells["valorDGVColumn"].Value.ToString();
-
                 dateVigenciaInicial.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value;
                 timeVigenciaInicial.Value = Convert.ToDateTime(dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value);
-
                 dateVigenciaFinal.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value;
                 timeVigenciaFinal.Value = Convert.ToDateTime((DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value);
             }
+        }
+
+        private void btnAtualizarLista_Click(object sender, EventArgs e)
+        {
+            // Atualizar o grid com os dados da tabela
+            this.valoresTableAdapter.Fill(this.DataSetValores.valores);
         }
     }
 }

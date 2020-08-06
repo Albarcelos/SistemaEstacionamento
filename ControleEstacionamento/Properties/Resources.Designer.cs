@@ -73,9 +73,39 @@ namespace ControleEstacionamento.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_a_blank_page_icone_6944_16 {
+            get {
+                object obj = ResourceManager.GetObject("edit-a-blank-page-icone-6944-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estacionamento_logo {
             get {
                 object obj = ResourceManager.GetObject("estacionamento_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_icone_5603_16 {
+            get {
+                object obj = ResourceManager.GetObject("open-icone-5603-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_table_icone_6973_16 {
+            get {
+                object obj = ResourceManager.GetObject("refresh-table-icone-6973-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
