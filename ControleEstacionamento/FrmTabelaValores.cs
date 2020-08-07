@@ -61,7 +61,7 @@ namespace ControleEstacionamento
             // Alterar Valor e Vigência.
 
             // se houve clique em alguma das celulas no datagridview
-            if (dgvValorVigencia.CurrentRow.Index >= 0)
+            if (dgvValorVigencia.CurrentRow != null && dgvValorVigencia.CurrentRow.Index >= 0)
             {
                 // Habilitar campos
                 txtValor.Enabled = true;
@@ -76,11 +76,11 @@ namespace ControleEstacionamento
                 DataGridViewRow dgvLinhaSelected = dgvValorVigencia.Rows[dgvValorVigencia.CurrentRow.Index];
 
                 // pega o dado de acordo com o id da coluna desejada
-                txtValor.Text = dgvLinhaSelected.Cells["valorDGVColumn"].Value.ToString();
-                dateVigenciaInicial.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value;
-                timeVigenciaInicial.Value = Convert.ToDateTime(dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value);
-                dateVigenciaFinal.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value;
-                timeVigenciaFinal.Value = Convert.ToDateTime((DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value);
+                txtValor.Text = dgvLinhaSelected.Cells["tValorDGVColumn"].Value.ToString();
+                dateVigenciaInicial.Value = (DateTime)dgvLinhaSelected.Cells["tDataInicioVigenciaDGVColumn"].Value;
+                timeVigenciaInicial.Value = Convert.ToDateTime(dgvLinhaSelected.Cells["tDataInicioVigenciaDGVColumn"].Value);
+                dateVigenciaFinal.Value = (DateTime)dgvLinhaSelected.Cells["tDataFimVigenciaDGVColumn"].Value;
+                timeVigenciaFinal.Value = Convert.ToDateTime((DateTime)dgvLinhaSelected.Cells["tDataFimVigenciaDGVColumn"].Value);
             }
             else
             {
@@ -92,7 +92,7 @@ namespace ControleEstacionamento
         {
             // Remover Valor e Vigência.
             // se houve clique em alguma das celulas no datagridview
-            if (dgvValorVigencia.CurrentRow.Index >= 0)
+            if (dgvValorVigencia.CurrentRow != null && dgvValorVigencia.CurrentRow.Index >= 0)
             {
                 // Desabilitar campos
                 txtValor.Enabled = false;
@@ -107,9 +107,9 @@ namespace ControleEstacionamento
                 DataGridViewRow dgvLinhaSelected = dgvValorVigencia.Rows[dgvValorVigencia.CurrentRow.Index];
 
                 // pega o dado de acordo com o id da coluna desejada
-                txtValor.Text = dgvLinhaSelected.Cells["valorDGVColumn"].Value.ToString();
+                txtValor.Text = dgvLinhaSelected.Cells["tValorDGVColumn"].Value.ToString();
 
-                MessageBox.Show("registro que deseja remover = " + dgvLinhaSelected.Cells["idValoresDGVColumn"].Value.ToString(), "Atenção!");
+                MessageBox.Show("registro que deseja remover = " + dgvLinhaSelected.Cells["tIdValoresDGVColumn"].Value.ToString(), "Atenção!");
             }
             else
             {
@@ -181,18 +181,18 @@ namespace ControleEstacionamento
                 DataGridViewRow dgvLinhaSelected = dgvValorVigencia.Rows[e.RowIndex];
 
                 // pega o dado de acordo com o id da coluna desejada
-                txtValor.Text = dgvLinhaSelected.Cells["valorDGVColumn"].Value.ToString();
-                dateVigenciaInicial.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value;
-                timeVigenciaInicial.Value = Convert.ToDateTime(dgvLinhaSelected.Cells["vigenciaInicialDGVColumn"].Value);
-                dateVigenciaFinal.Value = (DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value;
-                timeVigenciaFinal.Value = Convert.ToDateTime((DateTime)dgvLinhaSelected.Cells["vigenciaFinalDGVColumn"].Value);
+                txtValor.Text = dgvLinhaSelected.Cells["tValorDGVColumn"].Value.ToString();
+                dateVigenciaInicial.Value = (DateTime)dgvLinhaSelected.Cells["tDataInicioVigenciaDGVColumn"].Value;
+                timeVigenciaInicial.Value = Convert.ToDateTime(dgvLinhaSelected.Cells["tDataInicioVigenciaDGVColumn"].Value);
+                dateVigenciaFinal.Value = (DateTime)dgvLinhaSelected.Cells["tDataFimVigenciaDGVColumn"].Value;
+                timeVigenciaFinal.Value = Convert.ToDateTime((DateTime)dgvLinhaSelected.Cells["tDataFimVigenciaDGVColumn"].Value);
             }
         }
 
         private void btnAtualizarLista_Click(object sender, EventArgs e)
         {
             // Atualizar o grid com os dados da tabela
-            
+            this.t_Valores_VigenciaTableAdapter.Fill(this.dBEstacionamentoDataSet1.T_Valores_Vigencia);
         }
     }
 }

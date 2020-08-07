@@ -57,10 +57,10 @@
             this.dBEstacionamentoDataSet1 = new ControleEstacionamento.DBEstacionamentoDataSet1();
             this.tValoresVigenciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_Valores_VigenciaTableAdapter = new ControleEstacionamento.DBEstacionamentoDataSet1TableAdapters.T_Valores_VigenciaTableAdapter();
-            this.tIdValoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tValorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tDataInicioVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tDataFimVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIdValoresDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tValorDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tDataInicioVigenciaDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tDataFimVigenciaDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tStatusValorVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValorVigencia)).BeginInit();
@@ -76,7 +76,7 @@
             this.toolstripTabelaValores});
             this.statusStrip1.Location = new System.Drawing.Point(0, 539);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(484, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(632, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -97,28 +97,26 @@
             this.dgvValorVigencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvValorVigencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvValorVigencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tIdValoresDataGridViewTextBoxColumn,
-            this.tValorDataGridViewTextBoxColumn,
-            this.tDataInicioVigenciaDataGridViewTextBoxColumn,
-            this.tDataFimVigenciaDataGridViewTextBoxColumn,
+            this.tIdValoresDGVColumn,
+            this.tValorDGVColumn,
+            this.tDataInicioVigenciaDGVColumn,
+            this.tDataFimVigenciaDGVColumn,
             this.tStatusValorVigenciaDataGridViewTextBoxColumn});
             this.dgvValorVigencia.DataSource = this.tValoresVigenciaBindingSource;
             this.dgvValorVigencia.Location = new System.Drawing.Point(12, 187);
             this.dgvValorVigencia.Name = "dgvValorVigencia";
             this.dgvValorVigencia.ReadOnly = true;
-            this.dgvValorVigencia.Size = new System.Drawing.Size(460, 349);
+            this.dgvValorVigencia.Size = new System.Drawing.Size(608, 349);
             this.dgvValorVigencia.TabIndex = 1;
             this.dgvValorVigencia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvValorVigencia_CellClick);
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.ForeColor = System.Drawing.Color.Green;
             this.btnAdicionar.Location = new System.Drawing.Point(12, 40);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(146, 23);
+            this.btnAdicionar.Size = new System.Drawing.Size(176, 23);
             this.btnAdicionar.TabIndex = 2;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
@@ -126,13 +124,11 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnAlterar.Location = new System.Drawing.Point(169, 40);
+            this.btnAlterar.Location = new System.Drawing.Point(239, 40);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(146, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(176, 23);
             this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -140,13 +136,12 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemover.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnRemover.Location = new System.Drawing.Point(326, 40);
+            this.btnRemover.Location = new System.Drawing.Point(470, 40);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(146, 23);
+            this.btnRemover.Size = new System.Drawing.Size(150, 23);
             this.btnRemover.TabIndex = 2;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
@@ -158,7 +153,7 @@
             this.arquivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(632, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -195,7 +190,7 @@
             this.panel1.Controls.Add(this.txtValor);
             this.panel1.Location = new System.Drawing.Point(12, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 112);
+            this.panel1.Size = new System.Drawing.Size(608, 112);
             this.panel1.TabIndex = 6;
             // 
             // btnAtualizarLista
@@ -212,7 +207,7 @@
             // 
             this.timeVigenciaFinal.Enabled = false;
             this.timeVigenciaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timeVigenciaFinal.Location = new System.Drawing.Point(271, 55);
+            this.timeVigenciaFinal.Location = new System.Drawing.Point(319, 55);
             this.timeVigenciaFinal.Name = "timeVigenciaFinal";
             this.timeVigenciaFinal.ShowUpDown = true;
             this.timeVigenciaFinal.Size = new System.Drawing.Size(84, 20);
@@ -222,7 +217,7 @@
             // 
             this.timeVigenciaInicial.Enabled = false;
             this.timeVigenciaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timeVigenciaInicial.Location = new System.Drawing.Point(271, 29);
+            this.timeVigenciaInicial.Location = new System.Drawing.Point(319, 29);
             this.timeVigenciaInicial.Name = "timeVigenciaInicial";
             this.timeVigenciaInicial.ShowUpDown = true;
             this.timeVigenciaInicial.Size = new System.Drawing.Size(84, 20);
@@ -235,7 +230,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkRed;
             this.btnCancelar.Image = global::ControleEstacionamento.Properties.Resources.cross_icone_5804_161;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(271, 81);
+            this.btnCancelar.Location = new System.Drawing.Point(319, 81);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(84, 23);
             this.btnCancelar.TabIndex = 11;
@@ -251,7 +246,7 @@
             this.btnConfirmar.ForeColor = System.Drawing.Color.Green;
             this.btnConfirmar.Image = global::ControleEstacionamento.Properties.Resources.tick_icone_7522_161;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(179, 81);
+            this.btnConfirmar.Location = new System.Drawing.Point(227, 81);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnConfirmar.Size = new System.Drawing.Size(86, 23);
@@ -266,7 +261,7 @@
             this.dateVigenciaFinal.CustomFormat = "";
             this.dateVigenciaFinal.Enabled = false;
             this.dateVigenciaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateVigenciaFinal.Location = new System.Drawing.Point(179, 55);
+            this.dateVigenciaFinal.Location = new System.Drawing.Point(227, 55);
             this.dateVigenciaFinal.Name = "dateVigenciaFinal";
             this.dateVigenciaFinal.Size = new System.Drawing.Size(86, 20);
             this.dateVigenciaFinal.TabIndex = 10;
@@ -276,7 +271,7 @@
             this.dateVigenciaInicial.CustomFormat = "";
             this.dateVigenciaInicial.Enabled = false;
             this.dateVigenciaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateVigenciaInicial.Location = new System.Drawing.Point(179, 29);
+            this.dateVigenciaInicial.Location = new System.Drawing.Point(227, 29);
             this.dateVigenciaInicial.Name = "dateVigenciaInicial";
             this.dateVigenciaInicial.Size = new System.Drawing.Size(86, 20);
             this.dateVigenciaInicial.TabIndex = 10;
@@ -284,7 +279,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(85, 61);
+            this.label3.Location = new System.Drawing.Point(133, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 7;
@@ -293,7 +288,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 35);
+            this.label2.Location = new System.Drawing.Point(133, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 8;
@@ -302,7 +297,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(85, 6);
+            this.lblValor.Location = new System.Drawing.Point(133, 6);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(37, 13);
             this.lblValor.TabIndex = 9;
@@ -311,7 +306,7 @@
             // txtValor
             // 
             this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(179, 3);
+            this.txtValor.Location = new System.Drawing.Point(227, 3);
             this.txtValor.MaxLength = 6;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(86, 20);
@@ -332,40 +327,40 @@
             // 
             this.t_Valores_VigenciaTableAdapter.ClearBeforeFill = true;
             // 
-            // tIdValoresDataGridViewTextBoxColumn
+            // tIdValoresDGVColumn
             // 
-            this.tIdValoresDataGridViewTextBoxColumn.DataPropertyName = "T_IdValores";
-            this.tIdValoresDataGridViewTextBoxColumn.HeaderText = "T_IdValores";
-            this.tIdValoresDataGridViewTextBoxColumn.Name = "tIdValoresDataGridViewTextBoxColumn";
-            this.tIdValoresDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tIdValoresDataGridViewTextBoxColumn.Visible = false;
+            this.tIdValoresDGVColumn.DataPropertyName = "T_IdValores";
+            this.tIdValoresDGVColumn.HeaderText = "T_IdValores";
+            this.tIdValoresDGVColumn.Name = "tIdValoresDGVColumn";
+            this.tIdValoresDGVColumn.ReadOnly = true;
+            this.tIdValoresDGVColumn.Visible = false;
             // 
-            // tValorDataGridViewTextBoxColumn
+            // tValorDGVColumn
             // 
-            this.tValorDataGridViewTextBoxColumn.DataPropertyName = "T_Valor";
+            this.tValorDGVColumn.DataPropertyName = "T_Valor";
             dataGridViewCellStyle1.Format = "C2";
-            this.tValorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.tValorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.tValorDataGridViewTextBoxColumn.Name = "tValorDataGridViewTextBoxColumn";
-            this.tValorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tValorDGVColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.tValorDGVColumn.HeaderText = "Valor";
+            this.tValorDGVColumn.Name = "tValorDGVColumn";
+            this.tValorDGVColumn.ReadOnly = true;
             // 
-            // tDataInicioVigenciaDataGridViewTextBoxColumn
+            // tDataInicioVigenciaDGVColumn
             // 
-            this.tDataInicioVigenciaDataGridViewTextBoxColumn.DataPropertyName = "T_DataInicioVigencia";
+            this.tDataInicioVigenciaDGVColumn.DataPropertyName = "T_DataInicioVigencia";
             dataGridViewCellStyle2.Format = "G";
-            this.tDataInicioVigenciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tDataInicioVigenciaDataGridViewTextBoxColumn.HeaderText = "Data de Inicio Vigência";
-            this.tDataInicioVigenciaDataGridViewTextBoxColumn.Name = "tDataInicioVigenciaDataGridViewTextBoxColumn";
-            this.tDataInicioVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tDataInicioVigenciaDGVColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tDataInicioVigenciaDGVColumn.HeaderText = "Data de Inicio Vigência";
+            this.tDataInicioVigenciaDGVColumn.Name = "tDataInicioVigenciaDGVColumn";
+            this.tDataInicioVigenciaDGVColumn.ReadOnly = true;
             // 
-            // tDataFimVigenciaDataGridViewTextBoxColumn
+            // tDataFimVigenciaDGVColumn
             // 
-            this.tDataFimVigenciaDataGridViewTextBoxColumn.DataPropertyName = "T_DataFimVigencia";
+            this.tDataFimVigenciaDGVColumn.DataPropertyName = "T_DataFimVigencia";
             dataGridViewCellStyle3.Format = "G";
-            this.tDataFimVigenciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tDataFimVigenciaDataGridViewTextBoxColumn.HeaderText = "Data de Fim Vigência";
-            this.tDataFimVigenciaDataGridViewTextBoxColumn.Name = "tDataFimVigenciaDataGridViewTextBoxColumn";
-            this.tDataFimVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tDataFimVigenciaDGVColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tDataFimVigenciaDGVColumn.HeaderText = "Data de Fim Vigência";
+            this.tDataFimVigenciaDGVColumn.Name = "tDataFimVigenciaDGVColumn";
+            this.tDataFimVigenciaDGVColumn.ReadOnly = true;
             // 
             // tStatusValorVigenciaDataGridViewTextBoxColumn
             // 
@@ -378,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 561);
+            this.ClientSize = new System.Drawing.Size(632, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAlterar);
@@ -432,10 +427,10 @@
         private DBEstacionamentoDataSet1 dBEstacionamentoDataSet1;
         private System.Windows.Forms.BindingSource tValoresVigenciaBindingSource;
         private DBEstacionamentoDataSet1TableAdapters.T_Valores_VigenciaTableAdapter t_Valores_VigenciaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tIdValoresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tValorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tDataInicioVigenciaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tDataFimVigenciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tIdValoresDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tValorDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tDataInicioVigenciaDGVColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tDataFimVigenciaDGVColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tStatusValorVigenciaDataGridViewTextBoxColumn;
     }
 }
