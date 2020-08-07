@@ -35,8 +35,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolstripTabelaValores = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvValorVigencia = new System.Windows.Forms.DataGridView();
-            this.valoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetValores = new ControleEstacionamento.estacionamentoDataSet1();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
@@ -44,29 +42,32 @@
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtualizarLista = new System.Windows.Forms.Button();
             this.timeVigenciaFinal = new System.Windows.Forms.DateTimePicker();
             this.timeVigenciaInicial = new System.Windows.Forms.DateTimePicker();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.dateVigenciaFinal = new System.Windows.Forms.DateTimePicker();
             this.dateVigenciaInicial = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.valoresTableAdapter = new ControleEstacionamento.estacionamentoDataSet1TableAdapters.valoresTableAdapter();
-            this.idValoresDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vigenciaInicialDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vigenciaFinalDGVColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.btnAtualizarLista = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.dBEstacionamentoDataSet1 = new ControleEstacionamento.DBEstacionamentoDataSet1();
+            this.tValoresVigenciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.t_Valores_VigenciaTableAdapter = new ControleEstacionamento.DBEstacionamentoDataSet1TableAdapters.T_Valores_VigenciaTableAdapter();
+            this.tIdValoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tValorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tDataInicioVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tDataFimVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tStatusValorVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValorVigencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.valoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetValores)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dBEstacionamentoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tValoresVigenciaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -96,27 +97,18 @@
             this.dgvValorVigencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvValorVigencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvValorVigencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idValoresDGVColumn,
-            this.valorDGVColumn,
-            this.vigenciaInicialDGVColumn,
-            this.vigenciaFinalDGVColumn});
-            this.dgvValorVigencia.DataSource = this.valoresBindingSource;
+            this.tIdValoresDataGridViewTextBoxColumn,
+            this.tValorDataGridViewTextBoxColumn,
+            this.tDataInicioVigenciaDataGridViewTextBoxColumn,
+            this.tDataFimVigenciaDataGridViewTextBoxColumn,
+            this.tStatusValorVigenciaDataGridViewTextBoxColumn});
+            this.dgvValorVigencia.DataSource = this.tValoresVigenciaBindingSource;
             this.dgvValorVigencia.Location = new System.Drawing.Point(12, 187);
             this.dgvValorVigencia.Name = "dgvValorVigencia";
             this.dgvValorVigencia.ReadOnly = true;
             this.dgvValorVigencia.Size = new System.Drawing.Size(460, 349);
             this.dgvValorVigencia.TabIndex = 1;
             this.dgvValorVigencia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvValorVigencia_CellClick);
-            // 
-            // valoresBindingSource
-            // 
-            this.valoresBindingSource.DataMember = "valores";
-            this.valoresBindingSource.DataSource = this.DataSetValores;
-            // 
-            // DataSetValores
-            // 
-            this.DataSetValores.DataSetName = "DataSetValores";
-            this.DataSetValores.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnAdicionar
             // 
@@ -182,7 +174,7 @@
             // 
             this.sairToolStripMenuItem.Image = global::ControleEstacionamento.Properties.Resources.open_icone_5603_16;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -206,6 +198,16 @@
             this.panel1.Size = new System.Drawing.Size(460, 112);
             this.panel1.TabIndex = 6;
             // 
+            // btnAtualizarLista
+            // 
+            this.btnAtualizarLista.Image = global::ControleEstacionamento.Properties.Resources.refresh_table_icone_6973_16;
+            this.btnAtualizarLista.Location = new System.Drawing.Point(3, 81);
+            this.btnAtualizarLista.Name = "btnAtualizarLista";
+            this.btnAtualizarLista.Size = new System.Drawing.Size(28, 23);
+            this.btnAtualizarLista.TabIndex = 14;
+            this.btnAtualizarLista.UseVisualStyleBackColor = true;
+            this.btnAtualizarLista.Click += new System.EventHandler(this.btnAtualizarLista_Click);
+            // 
             // timeVigenciaFinal
             // 
             this.timeVigenciaFinal.Enabled = false;
@@ -225,6 +227,39 @@
             this.timeVigenciaInicial.ShowUpDown = true;
             this.timeVigenciaInicial.Size = new System.Drawing.Size(84, 20);
             this.timeVigenciaInicial.TabIndex = 12;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnCancelar.Image = global::ControleEstacionamento.Properties.Resources.cross_icone_5804_161;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(271, 81);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 23);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Enabled = false;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.ForeColor = System.Drawing.Color.Green;
+            this.btnConfirmar.Image = global::ControleEstacionamento.Properties.Resources.tick_icone_7522_161;
+            this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfirmar.Location = new System.Drawing.Point(179, 81);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnConfirmar.Size = new System.Drawing.Size(86, 23);
+            this.btnConfirmar.TabIndex = 11;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // dateVigenciaFinal
             // 
@@ -283,90 +318,61 @@
             this.txtValor.TabIndex = 6;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // valoresTableAdapter
+            // dBEstacionamentoDataSet1
             // 
-            this.valoresTableAdapter.ClearBeforeFill = true;
+            this.dBEstacionamentoDataSet1.DataSetName = "DBEstacionamentoDataSet1";
+            this.dBEstacionamentoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // idValoresDGVColumn
+            // tValoresVigenciaBindingSource
             // 
-            this.idValoresDGVColumn.DataPropertyName = "idvalores";
-            this.idValoresDGVColumn.HeaderText = "idvalores";
-            this.idValoresDGVColumn.Name = "idValoresDGVColumn";
-            this.idValoresDGVColumn.ReadOnly = true;
-            this.idValoresDGVColumn.Visible = false;
+            this.tValoresVigenciaBindingSource.DataMember = "T_Valores_Vigencia";
+            this.tValoresVigenciaBindingSource.DataSource = this.dBEstacionamentoDataSet1;
             // 
-            // valorDGVColumn
+            // t_Valores_VigenciaTableAdapter
             // 
-            this.valorDGVColumn.DataPropertyName = "valor";
+            this.t_Valores_VigenciaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tIdValoresDataGridViewTextBoxColumn
+            // 
+            this.tIdValoresDataGridViewTextBoxColumn.DataPropertyName = "T_IdValores";
+            this.tIdValoresDataGridViewTextBoxColumn.HeaderText = "T_IdValores";
+            this.tIdValoresDataGridViewTextBoxColumn.Name = "tIdValoresDataGridViewTextBoxColumn";
+            this.tIdValoresDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tIdValoresDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tValorDataGridViewTextBoxColumn
+            // 
+            this.tValorDataGridViewTextBoxColumn.DataPropertyName = "T_Valor";
             dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.valorDGVColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.valorDGVColumn.HeaderText = "Valor";
-            this.valorDGVColumn.Name = "valorDGVColumn";
-            this.valorDGVColumn.ReadOnly = true;
+            this.tValorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.tValorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.tValorDataGridViewTextBoxColumn.Name = "tValorDataGridViewTextBoxColumn";
+            this.tValorDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // vigenciaInicialDGVColumn
+            // tDataInicioVigenciaDataGridViewTextBoxColumn
             // 
-            this.vigenciaInicialDGVColumn.DataPropertyName = "vigenciaInicial";
+            this.tDataInicioVigenciaDataGridViewTextBoxColumn.DataPropertyName = "T_DataInicioVigencia";
             dataGridViewCellStyle2.Format = "G";
-            dataGridViewCellStyle2.NullValue = null;
-            this.vigenciaInicialDGVColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.vigenciaInicialDGVColumn.HeaderText = "Vigência Inicial";
-            this.vigenciaInicialDGVColumn.Name = "vigenciaInicialDGVColumn";
-            this.vigenciaInicialDGVColumn.ReadOnly = true;
+            this.tDataInicioVigenciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tDataInicioVigenciaDataGridViewTextBoxColumn.HeaderText = "Data de Inicio Vigência";
+            this.tDataInicioVigenciaDataGridViewTextBoxColumn.Name = "tDataInicioVigenciaDataGridViewTextBoxColumn";
+            this.tDataInicioVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // vigenciaFinalDGVColumn
+            // tDataFimVigenciaDataGridViewTextBoxColumn
             // 
-            this.vigenciaFinalDGVColumn.DataPropertyName = "vigenciaFinal";
+            this.tDataFimVigenciaDataGridViewTextBoxColumn.DataPropertyName = "T_DataFimVigencia";
             dataGridViewCellStyle3.Format = "G";
-            dataGridViewCellStyle3.NullValue = null;
-            this.vigenciaFinalDGVColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.vigenciaFinalDGVColumn.HeaderText = "Vigência Final";
-            this.vigenciaFinalDGVColumn.Name = "vigenciaFinalDGVColumn";
-            this.vigenciaFinalDGVColumn.ReadOnly = true;
+            this.tDataFimVigenciaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tDataFimVigenciaDataGridViewTextBoxColumn.HeaderText = "Data de Fim Vigência";
+            this.tDataFimVigenciaDataGridViewTextBoxColumn.Name = "tDataFimVigenciaDataGridViewTextBoxColumn";
+            this.tDataFimVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btnAtualizarLista
+            // tStatusValorVigenciaDataGridViewTextBoxColumn
             // 
-            this.btnAtualizarLista.Image = global::ControleEstacionamento.Properties.Resources.refresh_table_icone_6973_16;
-            this.btnAtualizarLista.Location = new System.Drawing.Point(3, 81);
-            this.btnAtualizarLista.Name = "btnAtualizarLista";
-            this.btnAtualizarLista.Size = new System.Drawing.Size(28, 23);
-            this.btnAtualizarLista.TabIndex = 14;
-            this.btnAtualizarLista.UseVisualStyleBackColor = true;
-            this.btnAtualizarLista.Click += new System.EventHandler(this.btnAtualizarLista_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnCancelar.Image = global::ControleEstacionamento.Properties.Resources.cross_icone_5804_161;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(271, 81);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(84, 23);
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Enabled = false;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.Green;
-            this.btnConfirmar.Image = global::ControleEstacionamento.Properties.Resources.tick_icone_7522_161;
-            this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(179, 81);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnConfirmar.Size = new System.Drawing.Size(86, 23);
-            this.btnConfirmar.TabIndex = 11;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.tStatusValorVigenciaDataGridViewTextBoxColumn.DataPropertyName = "T_StatusValorVigencia";
+            this.tStatusValorVigenciaDataGridViewTextBoxColumn.HeaderText = "Status Valor Vigência";
+            this.tStatusValorVigenciaDataGridViewTextBoxColumn.Name = "tStatusValorVigenciaDataGridViewTextBoxColumn";
+            this.tStatusValorVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmTabelaValores
             // 
@@ -388,12 +394,12 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValorVigencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.valoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetValores)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dBEstacionamentoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tValoresVigenciaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,9 +410,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolstripTabelaValores;
         private System.Windows.Forms.DataGridView dgvValorVigencia;
-        private estacionamentoDataSet1 DataSetValores;
-        private System.Windows.Forms.BindingSource valoresBindingSource;
-        private estacionamentoDataSet1TableAdapters.valoresTableAdapter valoresTableAdapter;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnRemover;
@@ -424,11 +427,15 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DateTimePicker timeVigenciaFinal;
         private System.Windows.Forms.DateTimePicker timeVigenciaInicial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idValoresDGVColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDGVColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vigenciaInicialDGVColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vigenciaFinalDGVColumn;
         private System.Windows.Forms.Button btnAtualizarLista;
         private System.Windows.Forms.ToolTip toolTip;
+        private DBEstacionamentoDataSet1 dBEstacionamentoDataSet1;
+        private System.Windows.Forms.BindingSource tValoresVigenciaBindingSource;
+        private DBEstacionamentoDataSet1TableAdapters.T_Valores_VigenciaTableAdapter t_Valores_VigenciaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tIdValoresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tValorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tDataInicioVigenciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tDataFimVigenciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tStatusValorVigenciaDataGridViewTextBoxColumn;
     }
 }

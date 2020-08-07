@@ -48,15 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase.cs" />
-    <Compile Include="DataSetValores.Designer.cs">
+    <Compile Include="DBEstacionamentoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetValores.xsd</DependentUpon>
+      <DependentUpon>DBEstacionamentoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetVeiculos.Designer.cs">
+    <Compile Include="DBEstacionamentoDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetVeiculos.xsd</DependentUpon>
+      <DependentUpon>DBEstacionamentoDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -83,27 +83,27 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DataSetValores.xsc">
-      <DependentUpon>DataSetValores.xsd</DependentUpon>
+    <None Include="DBEstacionamentoDataSet.xsc">
+      <DependentUpon>DBEstacionamentoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSetValores.xsd">
+    <None Include="DBEstacionamentoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetValores.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBEstacionamentoDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSetValores.xss">
-      <DependentUpon>DataSetValores.xsd</DependentUpon>
+    <None Include="DBEstacionamentoDataSet.xss">
+      <DependentUpon>DBEstacionamentoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSetVeiculos.xsc">
-      <DependentUpon>DataSetVeiculos.xsd</DependentUpon>
+    <None Include="DBEstacionamentoDataSet1.xsc">
+      <DependentUpon>DBEstacionamentoDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="DataSetVeiculos.xsd">
+    <None Include="DBEstacionamentoDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetVeiculos.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBEstacionamentoDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSetVeiculos.xss">
-      <DependentUpon>DataSetVeiculos.xsd</DependentUpon>
+    <None Include="DBEstacionamentoDataSet1.xss">
+      <DependentUpon>DBEstacionamentoDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

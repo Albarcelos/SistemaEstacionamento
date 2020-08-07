@@ -19,8 +19,9 @@ namespace ControleEstacionamento
 
         private void FrmTabelaValores_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'estacionamentoDataSet1.valores'. Você pode movê-la ou removê-la conforme necessário.
-            this.valoresTableAdapter.Fill(this.DataSetValores.valores);
+            // TODO: esta linha de código carrega dados na tabela 'dBEstacionamentoDataSet1.T_Valores_Vigencia'. Você pode movê-la ou removê-la conforme necessário.
+            this.t_Valores_VigenciaTableAdapter.Fill(this.dBEstacionamentoDataSet1.T_Valores_Vigencia);
+
 
             // Dicas para os botões
             toolTip.SetToolTip(btnAtualizarLista, "Atualizar a lista de valores/vigências.");
@@ -191,7 +192,7 @@ namespace ControleEstacionamento
         private void btnAtualizarLista_Click(object sender, EventArgs e)
         {
             // Atualizar o grid com os dados da tabela
-            this.valoresTableAdapter.Fill(this.DataSetValores.valores);
+            
         }
     }
 }

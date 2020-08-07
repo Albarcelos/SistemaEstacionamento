@@ -26,11 +26,11 @@ namespace ControleEstacionamento.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=al3xandr3;persistsecurityinfo=True;databas" +
-            "e=estacionamento")]
-        public string estacionamentoConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC-ALEXANDRE\\SQLEXPRESS;Initial Catalog=DBEstacionamento;Integrated S" +
+            "ecurity=True")]
+        public string DBEstacionamentoConnectionString {
             get {
-                return ((string)(this["estacionamentoConnectionString"]));
+                return ((string)(this["DBEstacionamentoConnectionString"]));
             }
         }
     }

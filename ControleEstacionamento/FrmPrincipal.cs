@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
-using MySql.Data.MySqlClient;
 
 namespace ControleEstacionamento
 {
     public partial class frmPrincipal : Form
     {
-        private MySqlConnection conexao = new MySqlConnection();
+        private SqlConnection conexao = new SqlConnection();
 
         public frmPrincipal()
         {
@@ -23,8 +23,8 @@ namespace ControleEstacionamento
 
         private void frmInicial_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'estacionamentoDataSet2.veiculos'. Você pode movê-la ou removê-la conforme necessário.
-            this.veiculosTableAdapter.Fill(this.DataSetVeiculos.veiculos);
+            // TODO: esta linha de código carrega dados na tabela 'dBEstacionamentoDataSet.T_Veiculos'. Você pode movê-la ou removê-la conforme necessário.
+            this.t_VeiculosTableAdapter.Fill(this.dBEstacionamentoDataSet.T_Veiculos);
 
             // Carregamento do sistema.
             timerDatHoraAtual.Enabled = true;
@@ -173,7 +173,7 @@ namespace ControleEstacionamento
         private void btnAtualizarLista_Click(object sender, EventArgs e)
         {
             // Atualizar o grid com os dados da tabela
-            this.veiculosTableAdapter.Fill(this.DataSetVeiculos.veiculos);
+            this.t_VeiculosTableAdapter.Fill(this.dBEstacionamentoDataSet.T_Veiculos);
         }
     }
 }

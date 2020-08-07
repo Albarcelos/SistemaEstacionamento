@@ -20,17 +20,17 @@ namespace ControleEstacionamento {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("estacionamentoDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DBEstacionamentoDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class estacionamentoDataSet1 : global::System.Data.DataSet {
+    public partial class DBEstacionamentoDataSet : global::System.Data.DataSet {
         
-        private valoresDataTable tablevalores;
+        private T_VeiculosDataTable tableT_Veiculos;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public estacionamentoDataSet1() {
+        public DBEstacionamentoDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ControleEstacionamento {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected estacionamentoDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DBEstacionamentoDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ControleEstacionamento {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["valores"] != null)) {
-                    base.Tables.Add(new valoresDataTable(ds.Tables["valores"]));
+                if ((ds.Tables["T_Veiculos"] != null)) {
+                    base.Tables.Add(new T_VeiculosDataTable(ds.Tables["T_Veiculos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ControleEstacionamento {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public valoresDataTable valores {
+        public T_VeiculosDataTable T_Veiculos {
             get {
-                return this.tablevalores;
+                return this.tableT_Veiculos;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ControleEstacionamento {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            estacionamentoDataSet1 cln = ((estacionamentoDataSet1)(base.Clone()));
+            DBEstacionamentoDataSet cln = ((DBEstacionamentoDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ControleEstacionamento {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["valores"] != null)) {
-                    base.Tables.Add(new valoresDataTable(ds.Tables["valores"]));
+                if ((ds.Tables["T_Veiculos"] != null)) {
+                    base.Tables.Add(new T_VeiculosDataTable(ds.Tables["T_Veiculos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ControleEstacionamento {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablevalores = ((valoresDataTable)(base.Tables["valores"]));
+            this.tableT_Veiculos = ((T_VeiculosDataTable)(base.Tables["T_Veiculos"]));
             if ((initTable == true)) {
-                if ((this.tablevalores != null)) {
-                    this.tablevalores.InitVars();
+                if ((this.tableT_Veiculos != null)) {
+                    this.tableT_Veiculos.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ControleEstacionamento {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "estacionamentoDataSet1";
+            this.DataSetName = "DBEstacionamentoDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/estacionamentoDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/DBEstacionamentoDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablevalores = new valoresDataTable();
-            base.Tables.Add(this.tablevalores);
+            this.tableT_Veiculos = new T_VeiculosDataTable();
+            base.Tables.Add(this.tableT_Veiculos);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializevalores() {
+        private bool ShouldSerializeT_Veiculos() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ControleEstacionamento {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            estacionamentoDataSet1 ds = new estacionamentoDataSet1();
+            DBEstacionamentoDataSet ds = new DBEstacionamentoDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,33 @@ namespace ControleEstacionamento {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void valoresRowChangeEventHandler(object sender, valoresRowChangeEvent e);
+        public delegate void T_VeiculosRowChangeEventHandler(object sender, T_VeiculosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class valoresDataTable : global::System.Data.TypedTableBase<valoresRow> {
+        public partial class T_VeiculosDataTable : global::System.Data.TypedTableBase<T_VeiculosRow> {
             
-            private global::System.Data.DataColumn columnidvalores;
+            private global::System.Data.DataColumn columnT_IdVeiculo;
             
-            private global::System.Data.DataColumn columnvalor;
+            private global::System.Data.DataColumn columnT_PlacaVeiculo;
             
-            private global::System.Data.DataColumn columnvigenciaInicial;
+            private global::System.Data.DataColumn columnT_DataEntrada;
             
-            private global::System.Data.DataColumn columnvigenciaFinal;
+            private global::System.Data.DataColumn columnT_DataSaida;
+            
+            private global::System.Data.DataColumn columnT_TempoEstadia;
+            
+            private global::System.Data.DataColumn columnT_EstadiaCobrada;
+            
+            private global::System.Data.DataColumn columnT_ValorTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public valoresDataTable() {
-                this.TableName = "valores";
+            public T_VeiculosDataTable() {
+                this.TableName = "T_Veiculos";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +304,7 @@ namespace ControleEstacionamento {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal valoresDataTable(global::System.Data.DataTable table) {
+            internal T_VeiculosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,40 +321,64 @@ namespace ControleEstacionamento {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected valoresDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected T_VeiculosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idvaloresColumn {
+            public global::System.Data.DataColumn T_IdVeiculoColumn {
                 get {
-                    return this.columnidvalores;
+                    return this.columnT_IdVeiculo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn valorColumn {
+            public global::System.Data.DataColumn T_PlacaVeiculoColumn {
                 get {
-                    return this.columnvalor;
+                    return this.columnT_PlacaVeiculo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn vigenciaInicialColumn {
+            public global::System.Data.DataColumn T_DataEntradaColumn {
                 get {
-                    return this.columnvigenciaInicial;
+                    return this.columnT_DataEntrada;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn vigenciaFinalColumn {
+            public global::System.Data.DataColumn T_DataSaidaColumn {
                 get {
-                    return this.columnvigenciaFinal;
+                    return this.columnT_DataSaida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn T_TempoEstadiaColumn {
+                get {
+                    return this.columnT_TempoEstadia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn T_EstadiaCobradaColumn {
+                get {
+                    return this.columnT_EstadiaCobrada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn T_ValorTotalColumn {
+                get {
+                    return this.columnT_ValorTotal;
                 }
             }
             
@@ -363,55 +393,58 @@ namespace ControleEstacionamento {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public valoresRow this[int index] {
+            public T_VeiculosRow this[int index] {
                 get {
-                    return ((valoresRow)(this.Rows[index]));
+                    return ((T_VeiculosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event valoresRowChangeEventHandler valoresRowChanging;
+            public event T_VeiculosRowChangeEventHandler T_VeiculosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event valoresRowChangeEventHandler valoresRowChanged;
+            public event T_VeiculosRowChangeEventHandler T_VeiculosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event valoresRowChangeEventHandler valoresRowDeleting;
+            public event T_VeiculosRowChangeEventHandler T_VeiculosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event valoresRowChangeEventHandler valoresRowDeleted;
+            public event T_VeiculosRowChangeEventHandler T_VeiculosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddvaloresRow(valoresRow row) {
+            public void AddT_VeiculosRow(T_VeiculosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public valoresRow AddvaloresRow(decimal valor, System.DateTime vigenciaInicial, System.DateTime vigenciaFinal) {
-                valoresRow rowvaloresRow = ((valoresRow)(this.NewRow()));
+            public T_VeiculosRow AddT_VeiculosRow(string T_PlacaVeiculo, System.DateTime T_DataEntrada, System.DateTime T_DataSaida, System.TimeSpan T_TempoEstadia, System.TimeSpan T_EstadiaCobrada, decimal T_ValorTotal) {
+                T_VeiculosRow rowT_VeiculosRow = ((T_VeiculosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        valor,
-                        vigenciaInicial,
-                        vigenciaFinal};
-                rowvaloresRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowvaloresRow);
-                return rowvaloresRow;
+                        T_PlacaVeiculo,
+                        T_DataEntrada,
+                        T_DataSaida,
+                        T_TempoEstadia,
+                        T_EstadiaCobrada,
+                        T_ValorTotal};
+                rowT_VeiculosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowT_VeiculosRow);
+                return rowT_VeiculosRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public valoresRow FindByidvalores(int idvalores) {
-                return ((valoresRow)(this.Rows.Find(new object[] {
-                            idvalores})));
+            public T_VeiculosRow FindByT_IdVeiculo(int T_IdVeiculo) {
+                return ((T_VeiculosRow)(this.Rows.Find(new object[] {
+                            T_IdVeiculo})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                valoresDataTable cln = ((valoresDataTable)(base.Clone()));
+                T_VeiculosDataTable cln = ((T_VeiculosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -419,65 +452,75 @@ namespace ControleEstacionamento {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new valoresDataTable();
+                return new T_VeiculosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnidvalores = base.Columns["idvalores"];
-                this.columnvalor = base.Columns["valor"];
-                this.columnvigenciaInicial = base.Columns["vigenciaInicial"];
-                this.columnvigenciaFinal = base.Columns["vigenciaFinal"];
+                this.columnT_IdVeiculo = base.Columns["T_IdVeiculo"];
+                this.columnT_PlacaVeiculo = base.Columns["T_PlacaVeiculo"];
+                this.columnT_DataEntrada = base.Columns["T_DataEntrada"];
+                this.columnT_DataSaida = base.Columns["T_DataSaida"];
+                this.columnT_TempoEstadia = base.Columns["T_TempoEstadia"];
+                this.columnT_EstadiaCobrada = base.Columns["T_EstadiaCobrada"];
+                this.columnT_ValorTotal = base.Columns["T_ValorTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnidvalores = new global::System.Data.DataColumn("idvalores", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidvalores);
-                this.columnvalor = new global::System.Data.DataColumn("valor", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvalor);
-                this.columnvigenciaInicial = new global::System.Data.DataColumn("vigenciaInicial", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvigenciaInicial);
-                this.columnvigenciaFinal = new global::System.Data.DataColumn("vigenciaFinal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvigenciaFinal);
+                this.columnT_IdVeiculo = new global::System.Data.DataColumn("T_IdVeiculo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT_IdVeiculo);
+                this.columnT_PlacaVeiculo = new global::System.Data.DataColumn("T_PlacaVeiculo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT_PlacaVeiculo);
+                this.columnT_DataEntrada = new global::System.Data.DataColumn("T_DataEntrada", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT_DataEntrada);
+                this.columnT_DataSaida = new global::System.Data.DataColumn("T_DataSaida", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT_DataSaida);
+                this.columnT_TempoEstadia = new global::System.Data.DataColumn("T_TempoEstadia", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT_TempoEstadia);
+                this.columnT_EstadiaCobrada = new global::System.Data.DataColumn("T_EstadiaCobrada", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT_EstadiaCobrada);
+                this.columnT_ValorTotal = new global::System.Data.DataColumn("T_ValorTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT_ValorTotal);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidvalores}, true));
-                this.columnidvalores.AutoIncrement = true;
-                this.columnidvalores.AutoIncrementSeed = -1;
-                this.columnidvalores.AutoIncrementStep = -1;
-                this.columnidvalores.AllowDBNull = false;
-                this.columnidvalores.Unique = true;
-                this.columnvalor.AllowDBNull = false;
-                this.columnvigenciaInicial.AllowDBNull = false;
-                this.columnvigenciaFinal.AllowDBNull = false;
+                                this.columnT_IdVeiculo}, true));
+                this.columnT_IdVeiculo.AutoIncrement = true;
+                this.columnT_IdVeiculo.AutoIncrementSeed = -1;
+                this.columnT_IdVeiculo.AutoIncrementStep = -1;
+                this.columnT_IdVeiculo.AllowDBNull = false;
+                this.columnT_IdVeiculo.ReadOnly = true;
+                this.columnT_IdVeiculo.Unique = true;
+                this.columnT_PlacaVeiculo.AllowDBNull = false;
+                this.columnT_PlacaVeiculo.MaxLength = 7;
+                this.columnT_DataEntrada.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public valoresRow NewvaloresRow() {
-                return ((valoresRow)(this.NewRow()));
+            public T_VeiculosRow NewT_VeiculosRow() {
+                return ((T_VeiculosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new valoresRow(builder);
+                return new T_VeiculosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(valoresRow);
+                return typeof(T_VeiculosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.valoresRowChanged != null)) {
-                    this.valoresRowChanged(this, new valoresRowChangeEvent(((valoresRow)(e.Row)), e.Action));
+                if ((this.T_VeiculosRowChanged != null)) {
+                    this.T_VeiculosRowChanged(this, new T_VeiculosRowChangeEvent(((T_VeiculosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -485,8 +528,8 @@ namespace ControleEstacionamento {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.valoresRowChanging != null)) {
-                    this.valoresRowChanging(this, new valoresRowChangeEvent(((valoresRow)(e.Row)), e.Action));
+                if ((this.T_VeiculosRowChanging != null)) {
+                    this.T_VeiculosRowChanging(this, new T_VeiculosRowChangeEvent(((T_VeiculosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -494,8 +537,8 @@ namespace ControleEstacionamento {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.valoresRowDeleted != null)) {
-                    this.valoresRowDeleted(this, new valoresRowChangeEvent(((valoresRow)(e.Row)), e.Action));
+                if ((this.T_VeiculosRowDeleted != null)) {
+                    this.T_VeiculosRowDeleted(this, new T_VeiculosRowChangeEvent(((T_VeiculosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -503,14 +546,14 @@ namespace ControleEstacionamento {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.valoresRowDeleting != null)) {
-                    this.valoresRowDeleting(this, new valoresRowChangeEvent(((valoresRow)(e.Row)), e.Action));
+                if ((this.T_VeiculosRowDeleting != null)) {
+                    this.T_VeiculosRowDeleting(this, new T_VeiculosRowChangeEvent(((T_VeiculosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovevaloresRow(valoresRow row) {
+            public void RemoveT_VeiculosRow(T_VeiculosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -519,7 +562,7 @@ namespace ControleEstacionamento {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                estacionamentoDataSet1 ds = new estacionamentoDataSet1();
+                DBEstacionamentoDataSet ds = new DBEstacionamentoDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -537,7 +580,7 @@ namespace ControleEstacionamento {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "valoresDataTable";
+                attribute2.FixedValue = "T_VeiculosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -581,59 +624,160 @@ namespace ControleEstacionamento {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class valoresRow : global::System.Data.DataRow {
+        public partial class T_VeiculosRow : global::System.Data.DataRow {
             
-            private valoresDataTable tablevalores;
+            private T_VeiculosDataTable tableT_Veiculos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal valoresRow(global::System.Data.DataRowBuilder rb) : 
+            internal T_VeiculosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablevalores = ((valoresDataTable)(this.Table));
+                this.tableT_Veiculos = ((T_VeiculosDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int idvalores {
+            public int T_IdVeiculo {
                 get {
-                    return ((int)(this[this.tablevalores.idvaloresColumn]));
+                    return ((int)(this[this.tableT_Veiculos.T_IdVeiculoColumn]));
                 }
                 set {
-                    this[this.tablevalores.idvaloresColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal valor {
-                get {
-                    return ((decimal)(this[this.tablevalores.valorColumn]));
-                }
-                set {
-                    this[this.tablevalores.valorColumn] = value;
+                    this[this.tableT_Veiculos.T_IdVeiculoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime vigenciaInicial {
+            public string T_PlacaVeiculo {
                 get {
-                    return ((global::System.DateTime)(this[this.tablevalores.vigenciaInicialColumn]));
+                    return ((string)(this[this.tableT_Veiculos.T_PlacaVeiculoColumn]));
                 }
                 set {
-                    this[this.tablevalores.vigenciaInicialColumn] = value;
+                    this[this.tableT_Veiculos.T_PlacaVeiculoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime vigenciaFinal {
+            public System.DateTime T_DataEntrada {
                 get {
-                    return ((global::System.DateTime)(this[this.tablevalores.vigenciaFinalColumn]));
+                    return ((global::System.DateTime)(this[this.tableT_Veiculos.T_DataEntradaColumn]));
                 }
                 set {
-                    this[this.tablevalores.vigenciaFinalColumn] = value;
+                    this[this.tableT_Veiculos.T_DataEntradaColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime T_DataSaida {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableT_Veiculos.T_DataSaidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'T_DataSaida\' na tabela \'T_Veiculos\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableT_Veiculos.T_DataSaidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.TimeSpan T_TempoEstadia {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tableT_Veiculos.T_TempoEstadiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'T_TempoEstadia\' na tabela \'T_Veiculos\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableT_Veiculos.T_TempoEstadiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.TimeSpan T_EstadiaCobrada {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tableT_Veiculos.T_EstadiaCobradaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'T_EstadiaCobrada\' na tabela \'T_Veiculos\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableT_Veiculos.T_EstadiaCobradaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal T_ValorTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableT_Veiculos.T_ValorTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'T_ValorTotal\' na tabela \'T_Veiculos\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableT_Veiculos.T_ValorTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsT_DataSaidaNull() {
+                return this.IsNull(this.tableT_Veiculos.T_DataSaidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetT_DataSaidaNull() {
+                this[this.tableT_Veiculos.T_DataSaidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsT_TempoEstadiaNull() {
+                return this.IsNull(this.tableT_Veiculos.T_TempoEstadiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetT_TempoEstadiaNull() {
+                this[this.tableT_Veiculos.T_TempoEstadiaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsT_EstadiaCobradaNull() {
+                return this.IsNull(this.tableT_Veiculos.T_EstadiaCobradaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetT_EstadiaCobradaNull() {
+                this[this.tableT_Veiculos.T_EstadiaCobradaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsT_ValorTotalNull() {
+                return this.IsNull(this.tableT_Veiculos.T_ValorTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetT_ValorTotalNull() {
+                this[this.tableT_Veiculos.T_ValorTotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -641,22 +785,22 @@ namespace ControleEstacionamento {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class valoresRowChangeEvent : global::System.EventArgs {
+        public class T_VeiculosRowChangeEvent : global::System.EventArgs {
             
-            private valoresRow eventRow;
+            private T_VeiculosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public valoresRowChangeEvent(valoresRow row, global::System.Data.DataRowAction action) {
+            public T_VeiculosRowChangeEvent(T_VeiculosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public valoresRow Row {
+            public T_VeiculosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -672,7 +816,7 @@ namespace ControleEstacionamento {
         }
     }
 }
-namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
+namespace ControleEstacionamento.DBEstacionamentoDataSetTableAdapters {
     
     
     /// <summary>
@@ -684,27 +828,27 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class valoresTableAdapter : global::System.ComponentModel.Component {
+    public partial class T_VeiculosTableAdapter : global::System.ComponentModel.Component {
         
-        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
-        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        private global::System.Data.SqlClient.SqlConnection _connection;
         
-        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
         
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
         
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public valoresTableAdapter() {
+        public T_VeiculosTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
             get {
                 if ((this._adapter == null)) {
                     this.InitAdapter();
@@ -715,7 +859,7 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+        internal global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -735,7 +879,7 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
                 }
                 for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
                     if ((this.CommandCollection[i] != null)) {
-                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
                     }
                 }
             }
@@ -743,7 +887,7 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
             get {
                 return this._transaction;
             }
@@ -769,7 +913,7 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
             get {
                 if ((this._commandCollection == null)) {
                     this.InitCommandCollection();
@@ -792,159 +936,84 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitAdapter() {
-            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "valores";
-            tableMapping.ColumnMappings.Add("idvalores", "idvalores");
-            tableMapping.ColumnMappings.Add("valor", "valor");
-            tableMapping.ColumnMappings.Add("vigenciaInicial", "vigenciaInicial");
-            tableMapping.ColumnMappings.Add("vigenciaFinal", "vigenciaFinal");
+            tableMapping.DataSetTable = "T_Veiculos";
+            tableMapping.ColumnMappings.Add("T_IdVeiculo", "T_IdVeiculo");
+            tableMapping.ColumnMappings.Add("T_PlacaVeiculo", "T_PlacaVeiculo");
+            tableMapping.ColumnMappings.Add("T_DataEntrada", "T_DataEntrada");
+            tableMapping.ColumnMappings.Add("T_DataSaida", "T_DataSaida");
+            tableMapping.ColumnMappings.Add("T_TempoEstadia", "T_TempoEstadia");
+            tableMapping.ColumnMappings.Add("T_EstadiaCobrada", "T_EstadiaCobrada");
+            tableMapping.ColumnMappings.Add("T_ValorTotal", "T_ValorTotal");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `valores` WHERE ((`idvalores` = @p1) AND (`valor` = @p2) AND (`vigenc" +
-                "iaInicial` = @p3) AND (`vigenciaFinal` = @p4))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[T_Veiculos] WHERE (([T_IdVeiculo] = @Original_T_IdVeiculo) AND ([T_PlacaVeiculo] = @Original_T_PlacaVeiculo) AND ([T_DataEntrada] = @Original_T_DataEntrada) AND ((@IsNull_T_DataSaida = 1 AND [T_DataSaida] IS NULL) OR ([T_DataSaida] = @Original_T_DataSaida)) AND ((@IsNull_T_TempoEstadia = 1 AND [T_TempoEstadia] IS NULL) OR ([T_TempoEstadia] = @Original_T_TempoEstadia)) AND ((@IsNull_T_EstadiaCobrada = 1 AND [T_EstadiaCobrada] IS NULL) OR ([T_EstadiaCobrada] = @Original_T_EstadiaCobrada)) AND ((@IsNull_T_ValorTotal = 1 AND [T_ValorTotal] IS NULL) OR ([T_ValorTotal] = @Original_T_ValorTotal)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idvalores";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
-            param.IsNullable = true;
-            param.SourceColumn = "valor";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "vigenciaInicial";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "vigenciaFinal";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_IdVeiculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_IdVeiculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_PlacaVeiculo", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_PlacaVeiculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_DataEntrada", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataEntrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_T_DataSaida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataSaida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_DataSaida", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataSaida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_T_TempoEstadia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_TempoEstadia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_TempoEstadia", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_TempoEstadia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_T_EstadiaCobrada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_EstadiaCobrada", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_EstadiaCobrada", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_EstadiaCobrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_T_ValorTotal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_ValorTotal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_ValorTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "T_ValorTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `valores` (`valor`, `vigenciaInicial`, `vigenciaFinal`) VALUES (@p1, " +
-                "@p2, @p3)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[T_Veiculos] ([T_PlacaVeiculo], [T_DataEntrada], [T_DataSaida], [T_TempoEstadia], [T_EstadiaCobrada], [T_ValorTotal]) VALUES (@T_PlacaVeiculo, @T_DataEntrada, @T_DataSaida, @T_TempoEstadia, @T_EstadiaCobrada, @T_ValorTotal);
+SELECT T_IdVeiculo, T_PlacaVeiculo, T_DataEntrada, T_DataSaida, T_TempoEstadia, T_EstadiaCobrada, T_ValorTotal FROM T_Veiculos WHERE (T_IdVeiculo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
-            param.IsNullable = true;
-            param.SourceColumn = "valor";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "vigenciaInicial";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "vigenciaFinal";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_PlacaVeiculo", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_PlacaVeiculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_DataEntrada", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_DataSaida", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_TempoEstadia", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_TempoEstadia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_EstadiaCobrada", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_EstadiaCobrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_ValorTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "T_ValorTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `valores` SET `valor` = @p1, `vigenciaInicial` = @p2, `vigenciaFinal` = @p" +
-                "3 WHERE ((`idvalores` = @p4) AND (`valor` = @p5) AND (`vigenciaInicial` = @p6) A" +
-                "ND (`vigenciaFinal` = @p7))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[T_Veiculos] SET [T_PlacaVeiculo] = @T_PlacaVeiculo, [T_DataEntrada] = @T_DataEntrada, [T_DataSaida] = @T_DataSaida, [T_TempoEstadia] = @T_TempoEstadia, [T_EstadiaCobrada] = @T_EstadiaCobrada, [T_ValorTotal] = @T_ValorTotal WHERE (([T_IdVeiculo] = @Original_T_IdVeiculo) AND ([T_PlacaVeiculo] = @Original_T_PlacaVeiculo) AND ([T_DataEntrada] = @Original_T_DataEntrada) AND ((@IsNull_T_DataSaida = 1 AND [T_DataSaida] IS NULL) OR ([T_DataSaida] = @Original_T_DataSaida)) AND ((@IsNull_T_TempoEstadia = 1 AND [T_TempoEstadia] IS NULL) OR ([T_TempoEstadia] = @Original_T_TempoEstadia)) AND ((@IsNull_T_EstadiaCobrada = 1 AND [T_EstadiaCobrada] IS NULL) OR ([T_EstadiaCobrada] = @Original_T_EstadiaCobrada)) AND ((@IsNull_T_ValorTotal = 1 AND [T_ValorTotal] IS NULL) OR ([T_ValorTotal] = @Original_T_ValorTotal)));
+SELECT T_IdVeiculo, T_PlacaVeiculo, T_DataEntrada, T_DataSaida, T_TempoEstadia, T_EstadiaCobrada, T_ValorTotal FROM T_Veiculos WHERE (T_IdVeiculo = @T_IdVeiculo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
-            param.IsNullable = true;
-            param.SourceColumn = "valor";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "vigenciaInicial";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "vigenciaFinal";
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "idvalores";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
-            param.IsNullable = true;
-            param.SourceColumn = "valor";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "vigenciaInicial";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "vigenciaFinal";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_PlacaVeiculo", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_PlacaVeiculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_DataEntrada", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_DataSaida", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_TempoEstadia", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_TempoEstadia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_EstadiaCobrada", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_EstadiaCobrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_ValorTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "T_ValorTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_IdVeiculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_IdVeiculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_PlacaVeiculo", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_PlacaVeiculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_DataEntrada", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataEntrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_T_DataSaida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataSaida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_DataSaida", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_DataSaida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_T_TempoEstadia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_TempoEstadia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_TempoEstadia", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_TempoEstadia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_T_EstadiaCobrada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_EstadiaCobrada", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_EstadiaCobrada", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_EstadiaCobrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_T_ValorTotal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "T_ValorTotal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_T_ValorTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "T_ValorTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@T_IdVeiculo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "T_IdVeiculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::ControleEstacionamento.Properties.Settings.Default.estacionamentoConnectionString;
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ControleEstacionamento.Properties.Settings.Default.DBEstacionamentoConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `idvalores`, `valor`, `vigenciaInicial`, `vigenciaFinal` FROM `valores`";
+            this._commandCollection[0].CommandText = "SELECT T_IdVeiculo, T_PlacaVeiculo, T_DataEntrada, T_DataSaida, T_TempoEstadia, T" +
+                "_EstadiaCobrada, T_ValorTotal FROM dbo.T_Veiculos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -952,7 +1021,7 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(estacionamentoDataSet1.valoresDataTable dataTable) {
+        public virtual int Fill(DBEstacionamentoDataSet.T_VeiculosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -965,9 +1034,9 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual estacionamentoDataSet1.valoresDataTable GetData() {
+        public virtual DBEstacionamentoDataSet.T_VeiculosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            estacionamentoDataSet1.valoresDataTable dataTable = new estacionamentoDataSet1.valoresDataTable();
+            DBEstacionamentoDataSet.T_VeiculosDataTable dataTable = new DBEstacionamentoDataSet.T_VeiculosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -975,15 +1044,15 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(estacionamentoDataSet1.valoresDataTable dataTable) {
+        public virtual int Update(DBEstacionamentoDataSet.T_VeiculosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(estacionamentoDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "valores");
+        public virtual int Update(DBEstacionamentoDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "T_Veiculos");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1005,11 +1074,47 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, decimal p2, System.DateTime p3, System.DateTime p4) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(p2));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(p3));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(p4));
+        public virtual int Delete(int Original_T_IdVeiculo, string Original_T_PlacaVeiculo, System.DateTime Original_T_DataEntrada, global::System.Nullable<global::System.DateTime> Original_T_DataSaida, global::System.Nullable<global::System.TimeSpan> Original_T_TempoEstadia, global::System.Nullable<global::System.TimeSpan> Original_T_EstadiaCobrada, global::System.Nullable<decimal> Original_T_ValorTotal) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_T_IdVeiculo));
+            if ((Original_T_PlacaVeiculo == null)) {
+                throw new global::System.ArgumentNullException("Original_T_PlacaVeiculo");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_T_PlacaVeiculo));
+            }
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_T_DataEntrada));
+            if ((Original_T_DataSaida.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_T_DataSaida.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_T_TempoEstadia.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.TimeSpan)(Original_T_TempoEstadia.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_T_EstadiaCobrada.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.TimeSpan)(Original_T_EstadiaCobrada.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_T_ValorTotal.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_T_ValorTotal.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1030,10 +1135,38 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal p1, System.DateTime p2, System.DateTime p3) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(p1));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(p2));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(p3));
+        public virtual int Insert(string T_PlacaVeiculo, System.DateTime T_DataEntrada, global::System.Nullable<global::System.DateTime> T_DataSaida, global::System.Nullable<global::System.TimeSpan> T_TempoEstadia, global::System.Nullable<global::System.TimeSpan> T_EstadiaCobrada, global::System.Nullable<decimal> T_ValorTotal) {
+            if ((T_PlacaVeiculo == null)) {
+                throw new global::System.ArgumentNullException("T_PlacaVeiculo");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(T_PlacaVeiculo));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(T_DataEntrada));
+            if ((T_DataSaida.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(T_DataSaida.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((T_TempoEstadia.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.TimeSpan)(T_TempoEstadia.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((T_EstadiaCobrada.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.TimeSpan)(T_EstadiaCobrada.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((T_ValorTotal.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(T_ValorTotal.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1054,14 +1187,79 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal p1, System.DateTime p2, System.DateTime p3, int p4, decimal p5, System.DateTime p6, System.DateTime p7) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(p1));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(p2));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(p3));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(p5));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(p6));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(p7));
+        public virtual int Update(string T_PlacaVeiculo, System.DateTime T_DataEntrada, global::System.Nullable<global::System.DateTime> T_DataSaida, global::System.Nullable<global::System.TimeSpan> T_TempoEstadia, global::System.Nullable<global::System.TimeSpan> T_EstadiaCobrada, global::System.Nullable<decimal> T_ValorTotal, int Original_T_IdVeiculo, string Original_T_PlacaVeiculo, System.DateTime Original_T_DataEntrada, global::System.Nullable<global::System.DateTime> Original_T_DataSaida, global::System.Nullable<global::System.TimeSpan> Original_T_TempoEstadia, global::System.Nullable<global::System.TimeSpan> Original_T_EstadiaCobrada, global::System.Nullable<decimal> Original_T_ValorTotal, int T_IdVeiculo) {
+            if ((T_PlacaVeiculo == null)) {
+                throw new global::System.ArgumentNullException("T_PlacaVeiculo");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(T_PlacaVeiculo));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(T_DataEntrada));
+            if ((T_DataSaida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(T_DataSaida.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((T_TempoEstadia.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.TimeSpan)(T_TempoEstadia.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((T_EstadiaCobrada.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.TimeSpan)(T_EstadiaCobrada.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((T_ValorTotal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(T_ValorTotal.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_T_IdVeiculo));
+            if ((Original_T_PlacaVeiculo == null)) {
+                throw new global::System.ArgumentNullException("Original_T_PlacaVeiculo");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_T_PlacaVeiculo));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_T_DataEntrada));
+            if ((Original_T_DataSaida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_T_DataSaida.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_T_TempoEstadia.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.TimeSpan)(Original_T_TempoEstadia.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_T_EstadiaCobrada.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.TimeSpan)(Original_T_EstadiaCobrada.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_T_ValorTotal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_T_ValorTotal.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(T_IdVeiculo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1077,6 +1275,14 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
                 }
             }
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string T_PlacaVeiculo, System.DateTime T_DataEntrada, global::System.Nullable<global::System.DateTime> T_DataSaida, global::System.Nullable<global::System.TimeSpan> T_TempoEstadia, global::System.Nullable<global::System.TimeSpan> T_EstadiaCobrada, global::System.Nullable<decimal> T_ValorTotal, int Original_T_IdVeiculo, string Original_T_PlacaVeiculo, System.DateTime Original_T_DataEntrada, global::System.Nullable<global::System.DateTime> Original_T_DataSaida, global::System.Nullable<global::System.TimeSpan> Original_T_TempoEstadia, global::System.Nullable<global::System.TimeSpan> Original_T_EstadiaCobrada, global::System.Nullable<decimal> Original_T_ValorTotal) {
+            return this.Update(T_PlacaVeiculo, T_DataEntrada, T_DataSaida, T_TempoEstadia, T_EstadiaCobrada, T_ValorTotal, Original_T_IdVeiculo, Original_T_PlacaVeiculo, Original_T_DataEntrada, Original_T_DataSaida, Original_T_TempoEstadia, Original_T_EstadiaCobrada, Original_T_ValorTotal, Original_T_IdVeiculo);
+        }
     }
     
     /// <summary>
@@ -1091,7 +1297,7 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private valoresTableAdapter _valoresTableAdapter;
+        private T_VeiculosTableAdapter _t_VeiculosTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1113,12 +1319,12 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public valoresTableAdapter valoresTableAdapter {
+        public T_VeiculosTableAdapter T_VeiculosTableAdapter {
             get {
-                return this._valoresTableAdapter;
+                return this._t_VeiculosTableAdapter;
             }
             set {
-                this._valoresTableAdapter = value;
+                this._t_VeiculosTableAdapter = value;
             }
         }
         
@@ -1141,9 +1347,9 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._valoresTableAdapter != null) 
-                            && (this._valoresTableAdapter.Connection != null))) {
-                    return this._valoresTableAdapter.Connection;
+                if (((this._t_VeiculosTableAdapter != null) 
+                            && (this._t_VeiculosTableAdapter.Connection != null))) {
+                    return this._t_VeiculosTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1158,7 +1364,7 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._valoresTableAdapter != null)) {
+                if ((this._t_VeiculosTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1170,14 +1376,14 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(estacionamentoDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DBEstacionamentoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._valoresTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.valores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._t_VeiculosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.T_Veiculos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._valoresTableAdapter.Update(updatedRows));
+                    result = (result + this._t_VeiculosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1189,13 +1395,13 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(estacionamentoDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DBEstacionamentoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._valoresTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.valores.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._t_VeiculosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.T_Veiculos.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._valoresTableAdapter.Update(addedRows));
+                    result = (result + this._t_VeiculosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1207,13 +1413,13 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(estacionamentoDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DBEstacionamentoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._valoresTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.valores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._t_VeiculosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.T_Veiculos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._valoresTableAdapter.Update(deletedRows));
+                    result = (result + this._t_VeiculosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1249,15 +1455,15 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(estacionamentoDataSet1 dataSet) {
+        public virtual int UpdateAll(DBEstacionamentoDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._valoresTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._valoresTableAdapter.Connection) == false))) {
+            if (((this._t_VeiculosTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._t_VeiculosTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
@@ -1293,13 +1499,13 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._valoresTableAdapter != null)) {
-                    revertConnections.Add(this._valoresTableAdapter, this._valoresTableAdapter.Connection);
-                    this._valoresTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
-                    this._valoresTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
-                    if (this._valoresTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._valoresTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._valoresTableAdapter.Adapter);
+                if ((this._t_VeiculosTableAdapter != null)) {
+                    revertConnections.Add(this._t_VeiculosTableAdapter, this._t_VeiculosTableAdapter.Connection);
+                    this._t_VeiculosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._t_VeiculosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._t_VeiculosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._t_VeiculosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._t_VeiculosTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1360,9 +1566,9 @@ namespace ControleEstacionamento.estacionamentoDataSet1TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._valoresTableAdapter != null)) {
-                    this._valoresTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._valoresTableAdapter]));
-                    this._valoresTableAdapter.Transaction = null;
+                if ((this._t_VeiculosTableAdapter != null)) {
+                    this._t_VeiculosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._t_VeiculosTableAdapter]));
+                    this._t_VeiculosTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
