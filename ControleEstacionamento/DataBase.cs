@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms;
+using System.Data;
+
+namespace ControleEstacionamento
+{
+    class DataBase
+    {
+        public static string MySqlClientString = "server=localhost;user id=root;password=al3xandr3;database=estacionamento;SslMode=none";
+
+        public static void ConexaoBD()
+        {
+            MySqlConnection conn = new MySqlConnection(MySqlClientString);
+            try
+            {
+                if (conn.State.Equals(ConnectionState.Closed))
+                {
+                    conn.Open();
+                }
+            }
+            catch (MySqlException erro)
+            {
+                MessageBox.Show("Não foi possível conectar com o banco de dados : " + erro.Message, "Erro de Conexão", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
+
+        public class Manutencao
+        {
+            public MySqlConnection conn = new MySqlConnection(MySqlClientString);
+            public MySqlCommand cmd = new MySqlCommand();
+            public DataTable dt = new DataTable();
+            public MySqlDataAdapter da = new MySqlDataAdapter();
+            public DataSet ds = new DataSet();
+            //Executa a instrução para inserir/deletar e atualizar
+            public void ExecutaConsulta(string MySql)
+            {
+                try
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = MySql;
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+
+            //Obtem os registros da tabela
+            public DataTable GetRegistros(string MySql)
+            {
+                try
+                {
+                    dt = new DataTable();
+                    da = new MySqlDataAdapter(MySql, conn);
+                    da.Fill(dt);
+                    return dt;
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
+    }
+}

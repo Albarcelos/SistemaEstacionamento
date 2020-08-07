@@ -27,30 +27,27 @@ namespace ControleEstacionamento
             this.veiculosTableAdapter.Fill(this.DataSetVeiculos.veiculos);
 
             // Carregamento do sistema.
-            string strConn = @"server=localhost;user id=root;password=al3xandr3;database=estacionamento;SslMode=none";
-            conexao = new MySqlConnection(strConn);
             timerDatHoraAtual.Enabled = true;
 
-            try
-            {
+            DataBase.ConexaoBD();
+
+            /*string strConn = @"server=localhost;user id=root;password=al3xandr3;database=estacionamento;SslMode=none";
+            conexao = new MySqlConnection(strConn);
+            try{
                 // teste de conexao.
                 conexao.Open();
                 toolstripTextoStatus.Text = "Banco de Dados Conectado!";
                 conexao.Close();
 
-                /*
-                MySqlCommand comando = new MySqlCommand();
-                comando.Connection = conexao;
-                comando.Connection.Open(); // abre a conexao.
-                comando.CommandText = "select * from valores"; // query para efetivar a saida do veiculo.
-                comando.ExecuteNonQuery(); // executa a query.
-                comando.Connection.Close(); // fecha a conexao.
-                */
-            }
-            catch
-            {
+                //MySqlCommand comando = new MySqlCommand();
+                //comando.Connection = conexao;
+                //comando.Connection.Open(); // abre a conexao.
+                //comando.CommandText = "select * from valores"; // query para efetivar a saida do veiculo.
+                //comando.ExecuteNonQuery(); // executa a query.
+                //comando.Connection.Close(); // fecha a conexao.
+            }catch{
                 MessageBox.Show("Não foi possível se conectar ao banco MySql!", "Erro de Conexão");
-            }
+            }*/
 
 
             // Dicas para os botões
@@ -59,7 +56,6 @@ namespace ControleEstacionamento
             toolTip.SetToolTip(btnSaida, "Saída de veículo do sistema.");
             toolTip.SetToolTip(btnConfirmarEntrada, "Confirmar o processo de entrada do veículo.");
             toolTip.SetToolTip(btnCancelarEntrada, "Cancelar o precesso de entrada de veículo.");
-
             toolTip.SetToolTip(txtPlacaVeiculo, "Informe a placa do veículo para entrada.");
         }
 

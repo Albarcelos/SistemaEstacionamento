@@ -22,12 +22,6 @@ namespace ControleEstacionamento
             // TODO: esta linha de código carrega dados na tabela 'estacionamentoDataSet1.valores'. Você pode movê-la ou removê-la conforme necessário.
             this.valoresTableAdapter.Fill(this.DataSetValores.valores);
 
-            /*
-             * To get the DateTime from both these controls use the following code
-             * DateTime myDate = datePortionDateTimePicker.Value.Date + timePortionDateTimePicker.Value.TimeOfDay;
-             * 
-             */
-
             // Dicas para os botões
             toolTip.SetToolTip(btnAtualizarLista, "Atualizar a lista de valores/vigências.");
             toolTip.SetToolTip(btnAdicionar, "Adicionar novo item de valores/vigências.");
@@ -151,8 +145,12 @@ namespace ControleEstacionamento
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             // Confirmar inclusão/alteração de Valor
+
             // data no mysql deve ser gravada no formato 'YYYY-MM-DD hh:mm:ss' (usa)
             // decimal no mysql necessita a troca da ',' (brasil) por '.' (usa)
+            /* To get the DateTime from both these controls use the following code
+             * DateTime myDate = datePortionDateTimePicker.Value.Date + timePortionDateTimePicker.Value.TimeOfDay;
+             */
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase.cs" />
     <Compile Include="DataSetValores.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

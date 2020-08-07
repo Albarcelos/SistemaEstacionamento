@@ -120,11 +120,13 @@
             // 
             // btnAdicionar
             // 
+            this.btnAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.ForeColor = System.Drawing.Color.Green;
             this.btnAdicionar.Location = new System.Drawing.Point(12, 40);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(100, 23);
+            this.btnAdicionar.Size = new System.Drawing.Size(146, 23);
             this.btnAdicionar.TabIndex = 2;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
@@ -136,7 +138,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btnAlterar.Location = new System.Drawing.Point(167, 40);
+            this.btnAlterar.Location = new System.Drawing.Point(169, 40);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(146, 23);
             this.btnAlterar.TabIndex = 2;
@@ -146,12 +148,13 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemover.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnRemover.Location = new System.Drawing.Point(372, 40);
+            this.btnRemover.Location = new System.Drawing.Point(326, 40);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(100, 23);
+            this.btnRemover.Size = new System.Drawing.Size(146, 23);
             this.btnRemover.TabIndex = 2;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
@@ -177,8 +180,9 @@
             // 
             // sairToolStripMenuItem
             // 
+            this.sairToolStripMenuItem.Image = global::ControleEstacionamento.Properties.Resources.open_icone_5603_16;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -206,7 +210,7 @@
             // 
             this.timeVigenciaFinal.Enabled = false;
             this.timeVigenciaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timeVigenciaFinal.Location = new System.Drawing.Point(189, 55);
+            this.timeVigenciaFinal.Location = new System.Drawing.Point(271, 55);
             this.timeVigenciaFinal.Name = "timeVigenciaFinal";
             this.timeVigenciaFinal.ShowUpDown = true;
             this.timeVigenciaFinal.Size = new System.Drawing.Size(84, 20);
@@ -216,7 +220,7 @@
             // 
             this.timeVigenciaInicial.Enabled = false;
             this.timeVigenciaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timeVigenciaInicial.Location = new System.Drawing.Point(189, 29);
+            this.timeVigenciaInicial.Location = new System.Drawing.Point(271, 29);
             this.timeVigenciaInicial.Name = "timeVigenciaInicial";
             this.timeVigenciaInicial.ShowUpDown = true;
             this.timeVigenciaInicial.Size = new System.Drawing.Size(84, 20);
@@ -227,7 +231,7 @@
             this.dateVigenciaFinal.CustomFormat = "";
             this.dateVigenciaFinal.Enabled = false;
             this.dateVigenciaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateVigenciaFinal.Location = new System.Drawing.Point(97, 55);
+            this.dateVigenciaFinal.Location = new System.Drawing.Point(179, 55);
             this.dateVigenciaFinal.Name = "dateVigenciaFinal";
             this.dateVigenciaFinal.Size = new System.Drawing.Size(86, 20);
             this.dateVigenciaFinal.TabIndex = 10;
@@ -237,7 +241,7 @@
             this.dateVigenciaInicial.CustomFormat = "";
             this.dateVigenciaInicial.Enabled = false;
             this.dateVigenciaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateVigenciaInicial.Location = new System.Drawing.Point(97, 29);
+            this.dateVigenciaInicial.Location = new System.Drawing.Point(179, 29);
             this.dateVigenciaInicial.Name = "dateVigenciaInicial";
             this.dateVigenciaInicial.Size = new System.Drawing.Size(86, 20);
             this.dateVigenciaInicial.TabIndex = 10;
@@ -245,7 +249,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 61);
+            this.label3.Location = new System.Drawing.Point(85, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 7;
@@ -254,7 +258,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 35);
+            this.label2.Location = new System.Drawing.Point(85, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 8;
@@ -263,7 +267,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(3, 6);
+            this.lblValor.Location = new System.Drawing.Point(85, 6);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(37, 13);
             this.lblValor.TabIndex = 9;
@@ -272,7 +276,7 @@
             // txtValor
             // 
             this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(97, 3);
+            this.txtValor.Location = new System.Drawing.Point(179, 3);
             this.txtValor.MaxLength = 6;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(86, 20);
@@ -323,13 +327,13 @@
             // 
             // btnAtualizarLista
             // 
-            this.btnAtualizarLista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtualizarLista.Image = global::ControleEstacionamento.Properties.Resources.refresh_table_icone_6973_16;
-            this.btnAtualizarLista.Location = new System.Drawing.Point(429, 81);
+            this.btnAtualizarLista.Location = new System.Drawing.Point(3, 81);
             this.btnAtualizarLista.Name = "btnAtualizarLista";
             this.btnAtualizarLista.Size = new System.Drawing.Size(28, 23);
             this.btnAtualizarLista.TabIndex = 14;
             this.btnAtualizarLista.UseVisualStyleBackColor = true;
+            this.btnAtualizarLista.Click += new System.EventHandler(this.btnAtualizarLista_Click);
             // 
             // btnCancelar
             // 
@@ -338,7 +342,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkRed;
             this.btnCancelar.Image = global::ControleEstacionamento.Properties.Resources.cross_icone_5804_161;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(189, 81);
+            this.btnCancelar.Location = new System.Drawing.Point(271, 81);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(84, 23);
             this.btnCancelar.TabIndex = 11;
@@ -354,7 +358,7 @@
             this.btnConfirmar.ForeColor = System.Drawing.Color.Green;
             this.btnConfirmar.Image = global::ControleEstacionamento.Properties.Resources.tick_icone_7522_161;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(97, 81);
+            this.btnConfirmar.Location = new System.Drawing.Point(179, 81);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnConfirmar.Size = new System.Drawing.Size(86, 23);
