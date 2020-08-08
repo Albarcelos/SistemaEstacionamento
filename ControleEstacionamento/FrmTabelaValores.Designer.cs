@@ -74,7 +74,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolstripTabelaValores});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 485);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(632, 22);
             this.statusStrip1.TabIndex = 0;
@@ -106,7 +106,7 @@
             this.dgvValorVigencia.Location = new System.Drawing.Point(12, 187);
             this.dgvValorVigencia.Name = "dgvValorVigencia";
             this.dgvValorVigencia.ReadOnly = true;
-            this.dgvValorVigencia.Size = new System.Drawing.Size(608, 349);
+            this.dgvValorVigencia.Size = new System.Drawing.Size(608, 285);
             this.dgvValorVigencia.TabIndex = 1;
             this.dgvValorVigencia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvValorVigencia_CellClick);
             // 
@@ -365,7 +365,7 @@
             // tStatusValorVigenciaDataGridViewTextBoxColumn
             // 
             this.tStatusValorVigenciaDataGridViewTextBoxColumn.DataPropertyName = "T_StatusValorVigencia";
-            this.tStatusValorVigenciaDataGridViewTextBoxColumn.HeaderText = "Status Valor Vigência";
+            this.tStatusValorVigenciaDataGridViewTextBoxColumn.HeaderText = "Status";
             this.tStatusValorVigenciaDataGridViewTextBoxColumn.Name = "tStatusValorVigenciaDataGridViewTextBoxColumn";
             this.tStatusValorVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -373,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 561);
+            this.ClientSize = new System.Drawing.Size(632, 507);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAlterar);

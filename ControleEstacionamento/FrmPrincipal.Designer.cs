@@ -38,8 +38,6 @@
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaDeValoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.status = new System.Windows.Forms.StatusStrip();
-            this.toolstripTextoStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnEntrada = new System.Windows.Forms.Button();
             this.btnSaida = new System.Windows.Forms.Button();
@@ -63,12 +61,14 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.t_VeiculosTableAdapter = new ControleEstacionamento.DBEstacionamentoDataSetTableAdapters.T_VeiculosTableAdapter();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menu.SuspendLayout();
-            this.status.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tVeiculosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBEstacionamentoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -94,7 +94,7 @@
             // 
             this.tabelaDeValoresToolStripMenuItem.Image = global::ControleEstacionamento.Properties.Resources.edit_a_blank_page_icone_6944_16;
             this.tabelaDeValoresToolStripMenuItem.Name = "tabelaDeValoresToolStripMenuItem";
-            this.tabelaDeValoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tabelaDeValoresToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.tabelaDeValoresToolStripMenuItem.Text = "Tabela de Valores";
             this.tabelaDeValoresToolStripMenuItem.Click += new System.EventHandler(this.tabelaDeValoresToolStripMenuItem_Click);
             // 
@@ -102,24 +102,9 @@
             // 
             this.sairToolStripMenuItem.Image = global::ControleEstacionamento.Properties.Resources.open_icone_5603_16;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // status
-            // 
-            this.status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolstripTextoStatus});
-            this.status.Location = new System.Drawing.Point(0, 539);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(884, 22);
-            this.status.TabIndex = 2;
-            this.status.Text = "statusStrip1";
-            // 
-            // toolstripTextoStatus
-            // 
-            this.toolstripTextoStatus.Name = "toolstripTextoStatus";
-            this.toolstripTextoStatus.Size = new System.Drawing.Size(0, 17);
             // 
             // lblTitulo
             // 
@@ -344,11 +329,28 @@
             // 
             this.t_VeiculosTableAdapter.ClearBeforeFill = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(884, 22);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(16, 17);
+            this.toolStripStatusLabel.Text = "...";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnAtualizarLista);
             this.Controls.Add(this.dgvVeiculos);
             this.Controls.Add(this.btnCancelarEntrada);
@@ -360,7 +362,6 @@
             this.Controls.Add(this.btnEntrada);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.imgLogo);
-            this.Controls.Add(this.status);
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
             this.Name = "frmPrincipal";
@@ -369,12 +370,12 @@
             this.Load += new System.EventHandler(this.frmInicial_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            this.status.ResumeLayout(false);
-            this.status.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tVeiculosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBEstacionamentoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,7 +383,6 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.StatusStrip status;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnEntrada;
@@ -395,16 +395,8 @@
         private System.Windows.Forms.TextBox txtPlacaVeiculo;
         private System.Windows.Forms.Button btnConfirmarEntrada;
         private System.Windows.Forms.Button btnCancelarEntrada;
-        private System.Windows.Forms.ToolStripStatusLabel toolstripTextoStatus;
         private System.Windows.Forms.DataGridView dgvVeiculos;
         private System.Windows.Forms.Timer timerDatHoraAtual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idVeiculosColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placaVeiculoColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataEntradaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataSaidaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tempoEstadiaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadiaCobradaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorCobradoColumn;
         private System.Windows.Forms.Button btnAtualizarLista;
         private System.Windows.Forms.ToolTip toolTip;
         private DBEstacionamentoDataSet dBEstacionamentoDataSet;
@@ -417,6 +409,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tTempoEstadiaDGVColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tEstadiaCobradaDGVColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tValorTotalDGVColumn;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
     }
 }
 

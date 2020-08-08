@@ -15,15 +15,14 @@ namespace ControleEstacionamento
 {
     public partial class frmPrincipal : Form
     {
-        public static string SqlClientString = @"Data Source=PC-ALEXANDRE\SQLEXPRESS;Initial Catalog=DBEstacionamento;Integrated Security=True;SslMode=none";
-        private SqlConnection conexao = new SqlConnection();
+        public static string SqlClientString = @"Data Source=PC-ALEXANDRE\SQLEXPRESS;Initial Catalog=DBEstacionamento;Integrated Security=True;";
 
         public frmPrincipal()
         {
             InitializeComponent();
         }
 
-        public static void ConexaoBD()
+        private void ConexaoBD()
         {
             SqlConnection conn = new SqlConnection(SqlClientString);
             try
@@ -39,6 +38,7 @@ namespace ControleEstacionamento
             }
             finally
             {
+                toolStripStatusLabel.Text = "Banco de Dados Conectado!";
                 conn.Dispose();
             }
         }
@@ -51,10 +51,8 @@ namespace ControleEstacionamento
             // Carregamento do sistema.
             timerDatHoraAtual.Enabled = true;
 
-            //DataBase.ConexaoBD();
-
-            
-
+            // teste de conexão com o servidor
+            ConexaoBD();
 
             // Dicas para os botões
             toolTip.SetToolTip(btnAtualizarLista, "Atualizar a lista de valores/vigências.");
@@ -160,7 +158,7 @@ namespace ControleEstacionamento
         private void dgvVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // se houve clique em alguma das celulas no datagridview
-            if (e.RowIndex >= 0)
+            if (dgvVeiculos.CurrentRow != null && e.RowIndex >= 0)
             {
                 // retorna a linha selacionada no grid
                 DataGridViewRow dgvLinhaSelected = dgvVeiculos.Rows[e.RowIndex];
@@ -174,32 +172,6 @@ namespace ControleEstacionamento
         {
             // Atualizar o grid com os dados da tabela
             this.t_VeiculosTableAdapter.Fill(this.dBEstacionamentoDataSet.T_Veiculos);
-
-            DataSet ds = new DataSet();
-
-            SqlConnection conexao = null;
-
-            try
-            {
-                conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                SqlCommand cmd = new SqlCommand("SP_CRUD_VALORES_VIGENCIA", conexao);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CA_OPERACAO", "S");
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(ds);
-
-                dgvVeiculos.DataSource = ds;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message,"Atenção!");
-            }
-            finally
-            {
-                conexao.Close();
-            }
         }
     }
 }

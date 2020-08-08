@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace ControleEstacionamento
 {
     public partial class FrmTabelaValores : Form
     {
+        public static string SqlClientString = @"Data Source=PC-ALEXANDRE\SQLEXPRESS;Initial Catalog=DBEstacionamento;Integrated Security=True;";
+
         public FrmTabelaValores()
         {
             InitializeComponent();
@@ -19,9 +22,10 @@ namespace ControleEstacionamento
 
         private void FrmTabelaValores_Load(object sender, EventArgs e)
         {
+            // Atualizar o grid com os dados da tabela
             // TODO: esta linha de código carrega dados na tabela 'dBEstacionamentoDataSet1.T_Valores_Vigencia'. Você pode movê-la ou removê-la conforme necessário.
-            this.t_Valores_VigenciaTableAdapter.Fill(this.dBEstacionamentoDataSet1.T_Valores_Vigencia);
-
+            //this.t_Valores_VigenciaTableAdapter.Fill(this.dBEstacionamentoDataSet1.T_Valores_Vigencia);
+            atualizarGrid();
 
             // Dicas para os botões
             toolTip.SetToolTip(btnAtualizarLista, "Atualizar a lista de valores/vigências.");
@@ -175,7 +179,7 @@ namespace ControleEstacionamento
         private void dgvValorVigencia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // se houve clique em alguma das celulas no datagridview
-            if (e.RowIndex >= 0)
+            if (dgvValorVigencia.CurrentRow != null && e.RowIndex >= 0)
             {
                 // retorna a linha selacionada no grid
                 DataGridViewRow dgvLinhaSelected = dgvValorVigencia.Rows[e.RowIndex];
@@ -192,7 +196,32 @@ namespace ControleEstacionamento
         private void btnAtualizarLista_Click(object sender, EventArgs e)
         {
             // Atualizar o grid com os dados da tabela
-            this.t_Valores_VigenciaTableAdapter.Fill(this.dBEstacionamentoDataSet1.T_Valores_Vigencia);
+            //this.t_Valores_VigenciaTableAdapter.Fill(this.dBEstacionamentoDataSet1.T_Valores_Vigencia);
+            atualizarGrid();
+        }
+
+        private void atualizarGrid()
+        {
+            SqlConnection myConn = new SqlConnection(SqlClientString);
+            DataTable dt = new DataTable();
+            try
+            {
+                myConn.Open();
+                SqlCommand myCmd = new SqlCommand("SP_CRUD_VALORES_VIGENCIA", myConn);
+                myCmd.CommandType = CommandType.StoredProcedure;
+                myCmd.Parameters.AddWithValue("@CA_OPERACAO", 'S');
+                SqlDataAdapter da = new SqlDataAdapter(myCmd);
+                da.Fill(dt);
+                dgvValorVigencia.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção!");
+            }
+            finally
+            {
+                myConn.Close();
+            }
         }
     }
 }
